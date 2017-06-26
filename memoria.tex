@@ -3,17 +3,17 @@
 %%
 %% Por Gregorio Robles <grex arroba gsyc.urjc.es>
 %%     Grupo de Sistemas y Comunicaciones
-%%     Escuela T�cnica Superior de Ingenieros de Telecomunicaci�n
+%%     Escuela Técnica Superior de Ingenieros de Telecomunicación
 %%     Universidad Rey Juan Carlos
 %% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
 %%  etc. Muchas gracias a todos)
 %%
-%% La �ltima versi�n de esta plantilla est� siempre disponible en:
+%% La última versión de esta plantilla está siempre disponible en:
 %%     https://github.com/gregoriorobles/plantilla-memoria
 %%
 %% Para obtener PDF, ejecuta en la shell:
 %%   make
-%% (las im�genes deben ir en PNG o JPG)
+%% (las imágenes deben ir en PNG o JPG)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -22,24 +22,24 @@
 
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{times}
-\usepackage[latin1]{inputenc}
-\usepackage[spanish]{babel} % Comenta esta l�nea si tu memoria es en ingl�s
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
 \usepackage{url}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
 \usepackage{float}  %% H para posicionar figuras
-\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de �ndice
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
 
 \title{Memoria del Proyecto}
-\author{Nombre del autor}
+\author{Fernando Caballero Sánchez}
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
 \begin{document}
 
-\renewcommand{\refname}{Bibliograf�a}  %% Renombrando
-\renewcommand{\appendixname}{Ap�ndice}
+\renewcommand{\refname}{Bibliografía}  %% Renombrando
+\renewcommand{\appendixname}{Apéndice}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PORTADA
@@ -61,16 +61,16 @@
 \vspace{3cm}
 
 \Large
-DOBLE LICENCIATURA EN INGENIER�A DE TELECOMUNICACIONES Y ADMINISTRACI�N Y DIRECCI�N DE EMPRESAS
+DOBLE LICENCIATURA EN INGENIERÍA DE TELECOMUNICACIÓN Y ADMINISTRACIÓN Y DIRECCIÓN DE EMPRESAS
 
 \vspace{0.4cm}
 
 \large
-Curso Acad�mico 2015/2016
+Curso Académico 2016/2017
 
 \vspace{0.8cm}
 
-Trabajo Fin de Carrera
+Proyecto Fin de Carrera
 
 \vspace{2.5cm}
 
@@ -80,7 +80,7 @@ MANTENIMIENTO Y SOPORTE DE UN DATAMART DE RIESGOS
 \vspace{4cm}
 
 \large
-Autor : Fernando Caballero S�nchez \\
+Autor : Fernando Caballero Sánchez \\
 Tutor : Dr. Gregorio Robles
 \end{center}
 \end{titlepage}
@@ -107,13 +107,13 @@ Mantenimiento y soporte de un Datamart de riesgos
 
 \vspace{1cm}
 \large
-\textbf{Autor :} Fernando Caballero S�nchez \\
-\textbf{Tutor :} Dr. Gregorio Robles Mart�nez
+\textbf{Autor :} Fernando Caballero Sánchez \\
+\textbf{Tutor :} Dr. Gregorio Robles Martínez
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realiz� el d�a \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2017, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -127,15 +127,15 @@ La defensa del presente Proyecto Fin de Carrera se realiz� el d�a \qquad$\;\,$ d
 
 
 \vspace{1.2cm}
-y habiendo obtenido la siguiente calificaci�n:
+y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
-\textbf{Calificaci�n:}
+\textbf{Calificación:}
 
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2016
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2017
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -145,46 +145,41 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2016
 \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi familia y a mi futura esposa}
+mi familia y a mi esposa}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Agradecimientos
 
 \chapter*{Agradecimientos}
-%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el �ndice
+%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el Índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Aqu� vienen los agradecimientos\ldots Aunque est� bien acordarse de la pareja,
-no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo 
-parezca disfrutar� tanto de tus logros como t�\ldots Adem�s, la pareja quiz�s
-no sea para siempre, pero tu madre s�.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
 
 \chapter*{Resumen}
-%\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el �ndice
+%\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el Índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-Aqu� viene un resumen del proyecto. Ha de constar de tres o cuatro p�rrafos,
-donde se presente de manera clara y concisa de qu� va el proyecto. Han
+Ha de constar de tres o cuatro párrafos, donde se presente de manera clara y concisa de qué va el proyecto. Han
 de quedar respondidas las siguientes preguntas:
 
 \begin{itemize}
-  \item �De qu� va este proyecto? �Cu�l es su objetivo principal?
-  \item �C�mo se ha realizado? �Qu� tecnolog�as est�n involucradas?
-  \item �En qu� contexto se ha realizado el proyecto? �Es un proyecto
+  \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
+  \item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
+  \item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto
 dentro de un marco general?
 \end{itemize}
 
 Lo mejor es escribir el resumen al final.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Resumen en ingl�s
+%%%% Resumen en inglÈs
 
 \chapter*{Summary}
-%\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el �ndice
+%\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el Índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
 Here comes a translation of the ``Resumen'' into English. Please, double check
@@ -195,20 +190,20 @@ just before submitting.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% �NDICES %
+% ÍNDICES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Las buenas noticias es que los �ndices se generan autom�ticamente.
-% Lo �nico que tienes que hacer es elegir cu�les quieren que se generen,
-% y comentar/descomentar esa instrucci�n de LaTeX.
+% Las buenas noticias es que los Índices se generan automáticamente.
+% Lo único que tienes que hacer es elegir cuáles quieren que se generen,
+% y comentar/descomentar esa instrucción de LaTeX.
 
-%%%% �ndice de contenidos
+%%%% Índice de contenidos
 \tableofcontents 
-%%%% �ndice de figuras
+%%%% Índice de figuras
 \cleardoublepage
 %\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
 \listoffigures % indice de figuras
-%%%% �ndice de tablas
+%%%% Índice de tablas
 %\cleardoublepage
 %\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
 %\listoftables % indice de tablas
@@ -216,71 +211,30 @@ just before submitting.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTRODUCCI�N %
+% INTRODUCCIÓN %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Introducci�n}
+\chapter{Introducción}
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
-\pagenumbering{arabic} % para empezar la numeraci�n de p�gina con n�meros
+\pagenumbering{arabic} % para empezar la numeración de página con números
 
-En este cap�tulo se introduce el proyecto, dando la informaci�n sobre el contexto en el que se ha desarrollado as� como informaci�n general acerca del mismo.
+En este capítulo se introduce el proyecto, dando la información sobre el contexto en el que se ha desarrollado así como información general acerca del mismo.
 
 \section{Contexto}
 \label{sec:Contexto}
 
-En la actualidad, el �rea de Inteligencia de Negocio o Business Intelligence ha adquirido una gran relevancia para las empresas. Esto es as� debido a la elevada capacidad tanto de almacenamiento como de procesamiento de datos que hasta ahora se descartaban por resultar demasiado costoso su tratamiento. Empleando un buen tratamiento de toda esta informaci�n, las organizaciones son capaces de tomar decisiones de negocio de la forma m�s acertada posible: descifrando tendencias, segmentando mercados y teniendo un mayor conocimiento de la actuaci�n de la organizaci�n en un determinado mercado.
+En la actualidad, el área de Inteligencia de Negocio o ``Business Intelligence'' ha adquirido una gran relevancia para las empresas. Esto es así debido a la elevada capacidad tanto de almacenamiento como de procesamiento de datos, los cuales se descartaban por resultar demasiado costoso su almacenamiento y tratamiento. Empleando un buen tratamiento de toda esta información las organizaciones son capaces de tomar decisiones de negocio de la forma más acertada posible: descifrando tendencias, segmentando mercados y teniendo un mayor conocimiento de la actuación de la organización en un determinado mercado.
 
-ALG�N GR�FICO DE LA IMPORTANCIA DEL BI PARA LAS EMPRESAS
-
-
+ALGÚN GRÁFICO DE LA IMPORTANCIA DEL BI PARA LAS EMPRESAS
 
 
+\section{Motivación}
+\label{sec:motivacion}
 
-\subsection{Estilo}
-\label{subsec:estilo}
 
-Sobre el uso de laaaas comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}
-
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{P�gina con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
-
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
-
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
-
+\section{Estructura de esta memoria}
+\label{sec:estructura}
 
 
 
@@ -294,15 +248,15 @@ Sobre el uso de laaaas comas\footnote{\url{http://narrativabreve.com/2015/02/opi
 \label{chap:objetivos}
 
 \section{Objetivo general}
-label{sec:objetivo-general}
+\label{sec:objetivo-general}
 
 
-\section{Objetivos espec�ficos}
-label{sec:objetivos-especificos}
+\section{Objetivos específicos}
+\label{sec:objetivos-especificos}
 
 
-\section{Planificaci�n temporal}
-label{sec:planificacion-temporal}
+\section{Planificación temporal}
+\label{sec:planificacion-temporal}
 
 
 
@@ -314,40 +268,410 @@ label{sec:planificacion-temporal}
 \cleardoublepage
 \chapter{Estado del arte}
 
-Descripci�n de las tecnolog�as que utilizas en tu trabajo. Con dos o tres p�rrafos por cada tecnolog�a, vale.
+\section{Arquitectura y diseño de un Datamart} 
+\label{sec:datamart}
+El principal motivo por el que una organización necesita disponer de un Data Warehouse surge debido a que los datos clave de toda la organización se encuentran fragmentados a lo largo de múltiples y dispares aplicativos, ejecutándose en diferentes plataformas y en distintas localizaciones físicas. Esta situación no es favorable para una buena toma de decisiones. Además, cuando existe redundancia de datos en múltiples bases de datos, la calidad de los mismos suele tender a deteriorarse.
 
+Por otro lado, las bases de datos operacionales están diseñadas para operar en los sistemas y recibir los datos de los mismos, por lo que no son adecuadas para llevar a cabo consultas y analíticas on-line.
 
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigm�rgicos~\cite{bonabeau:_swarm}. % Nota que el ~ a�ade un espacio en blanco, pero no deja que exista un salto de l�nea. Imprescindible ponerlo para las citas.
+Los entornos de Business Intelligence se pueden basar en diferentes arquitecturas, dependiendo en las necesidades específicas del negocio. El modelo que se muestra en la siguiente figura es el “hub-and-spokes”, siendo el más popular y el que se usa en muchas organizaciones.
 
-Tambi�n existe la posibilidad de poner notas al pie de p�gina, por ejemplo, 
-una para indicarte que visite la p�gina de 
-LibreSoft\footnote{\url{http://www.libresoft.es}}.
+\begin{figure}
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/modelo_Datamart}
+   \caption{Modelo Datamart hub-and-spokes}
+   \label{fig:modelo_Datamart}
+\end{figure}
 
-\section{Secci�n 1} 
-\label{sec:seccion1}
+El proceso que siguen los datos en este modelo es el siguiente: los datos se mueven desde las bases de datos de los sistemas operacionales hacia la zona de “\textit{staging}” del Data Warehouse, donde se preparan y modifican los datos para ser almacenados en el Data Warehouse. Finalmente, esos datos preparados se envían hacia los diferentes Data Marts que la organización haya definido. 
 
+La tecnología o proceso que se emplea para mover los datos en esta arquitectura se denomina ETL (por sus siglas en inglés ``Extract, Transform and Load"). Se emplea para transferir datos desde las aplicaciones operacionales a la zona de “\textit{staging}” del Data Warehouse, desde esta al Data Warehouse, y desde este último a cada uno de los Data Marts.
 
+Mediante el proceso de ETL los datos se extraen, se transforman los valores de los datos inconsistentes, se limpian los datos malformados, se filtran los datos y se cargan en la base de datos objetivo. La programación temporal de los trabajos de ETL es crítica, así como la tolerancia a errores: en caso de fallo de uno de estos trabajos, el resto debería responder de manera apropiada.
+
+El área de “\textit{staging}” del Data Warehouse es donde se copian los datos de los sistemas de origen de manera temporal. Este paso es fundamental en muchas arquitecturas de Data Warehouse para coordinar los tiempos entre todos los sistemas. De manera resumida, todos los datos que se necesitan deben estar disponibles al mismo tiempo antes de ser integrados en el Data Warehouse y, debido a, entre otras casos, los diferentes ciclos del negocio, los ciclos de procesamiento de datos en los sistemas de origen y las limitaciones de recursos hardware y red, no es factible extraer todos los datos de todas las bases de datos operacionales exactamente al mismo tiempo. Por ejemplo, puede ser razonable extraer la información de ventas diaria, sin embargo, extracciones diarias pueden no ser adecuadas para la información financiera que requiere un proceso de reconciliación a mes cerrado. Por último, es importante tener en cuenta que no todas las organizaciones necesitan un área de “\textit{staging}” en su Data Warehouse, ya que para muchos negocios es factible usar ETL para copiar directamente la información de las bases de datos operacionales al Data Warehouse.
+
+El objetivo del Data Warehouse en toda la arquitectura es integrar la información corporativa. En este sentido, será el Data Warehouse el que contenga la “única versión de la verdad” para la organización, que habrá sido cuidadosamente construida a partir de la información almacenada en diferentes bases de datos operacionales. La cantidad de información que se llega a almacenar en un Data Warehouse es masiva, debido a que los datos se almacenan en un nivel de detalle muy granular. Por ejemplo, cada venta que ha tenido lugar en una organización se almacena y relaciona, permitiendo llevar a cabo agregados, agrupaciones, filtrados y demás operaciones en una cantidad casi ilimitada de formas.
+
+Un aspecto a destacar es que, a diferencia de lo que se suele pensar de manera generalizada, el Data Warehouse no contiene toda la información que existe en una organización. El objetivo de un Data Warehouse es proporcionar métricas clave para el negocio que sean necesarias y útiles para la toma de decisión táctica y estratégica de la organización.
+
+Debido al gran volumen de información que almacena un Data Warehouse, las personas que toman decisiones y necesitan las métricas no acceden a este Data Warehouse directamente. Esto lo hacen a través de varias herramientas “front-end” que leen datos de los Data Marts específicos de cada área de negocio o temática.
+
+Los trabajos de ETL extraen la información del Data Warehouse y pueblan el/los Data Marts de la organización para su uso por parte de los grupos que toman las decisiones dentro de las organizaciones. Los Data Marts pueden ser dimensionales (esquemas en estrella) o relacionales, en función de como se necesite consumir la información y de qué herramienta de “front-end” se emplee para presentar la información.
+
+Cada Data Mart puede contener diferentes combinaciones de tablas, columnas y filas del Data Warehouse de la organización. Por ejemplo, una unidad de negocio o grupo de usuarios que no necesita datos históricos puede requerir únicamente las transacciones del año en curso, o el área de recursos humanos puede necesitar ver todos los detalles de todos los empleados, mientras que información como el salario o dirección de casa puede no ser apropiada para un Data Mart orientado al área de ventas.
+
+\section{Cliente VPN de Cisco}
+\label{sec:Cisco_VPN}
+
+El cliente VPN de Cisco es una herramienta del proveedor Cisco que permite configurar una red VPN. Actualmente se encuentra obsoleta y sin soporte por parte del fabricante. A través de Cisco VPN Cliente se crea una conexión segura sobre Internet entre los ordenadores y las máquinas donde residen tanto los datos del Datamart como la ejecución de los diferentes procesos propios del Datamart de Riesgos. Por lo tanto, esta herramienta permite acceder a la red privada de las máquinas del Datamart como si nos encontrásemos físicamente en la red.
+
+Una vez instalada la herramienta es necesario configurarla, agregando la conexión con los parámetros facilitados por el cliente. Para garantizar una conexión segura, el cliente proporciona los certificados necesarios, los cuales habrá que seleccionar también en el cliente VPN.
+
+A continuación, se muestra una captura de pantalla de la herramienta Cisco VPN Client donde se lleva a cabo la configuración de la conexión.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/ciscovpnclient}
+   \caption{Pantalla de configuración del Cliente VPN de Cisco}
+   \label{fig:CiscoVpnClient_Config}
+\end{figure}
+
+\section{Oracle}
+\label{sec:Oracle}
+Oracle Database es un sistema de gestión de base de datos de tipo objeto-relacional (ORDBMS, por el acrónimo en inglés de Object-Relational Data Base Management System), desarrollado por Oracle Corporation. Durante el desarrollo de este proyecto se usa la versión 11.2.0 de Oracle Database.
+
+Cabe señalar que el lenguaje usado para la gestión de la base de datos de Oracle es el Structured Query Language o SQL, así como la extensión procedimental PL/SQL para Oracle:
+
+\begin{itemize}
+	\item SQL is a set-based declarative language that provides an interface to an RDBMS such as Oracle Database. In contrast to procedural languages such as C, which describe how things should be done, SQL is nonprocedural and describes what should be done. Users specify the result that they want (for example, the names of current employees), not how to derive it. SQL is the ANSI standard language for relational databases.
+All operations on the data in an Oracle database are performed using SQL statements. For example, you use SQL to create tables and query and modify data in tables. A SQL statement can be thought of as a very simple, but powerful, computer program or instruction.
+
+	\item PL/SQL is a procedural extension to Oracle SQL. PL/SQL is integrated with Oracle Database, enabling you to use all of the Oracle Database SQL statements, functions, and data types. You can use PL/SQL to control the flow of a SQL program, use variables, and write error-handling procedures.
+A primary benefit of PL/SQL is the ability to store application logic in the database itself. A procedure or function is a schema object that consists of a set of SQL statements and other PL/SQL constructs, grouped together, stored in the database, and run as a unit to solve a specific problem or to perform a set of related tasks. The principal benefit of server-side programming is that built-in functionality can be deployed anywhere.
+\end{itemize}
+
+\section{PuTTY}
+\label{sec:PuTTY}
+PuTTY es una herramienta de software libre cuya misión es crear un terminal UNIX en entorno Windows. Esta herramienta la desarrolló originalmente Simon Tatham para plataformas Windows, aunque a día de hoy es soportado por voluntarios y se está trabajando en clientes para sistemas operativos Mac OS.
+
+En este Proyecto, PuTTY se usa para abrir en los ordenadores desde donde se realiza el soporte y mantenimiento del Datamart un terminal UNIX conectado a través de SSH a las máquinas que alojan físicamente este Datamart de Riesgos.
+
+En la figura~\ref{fig:PuTTY_Config} se muestra la pantalla de configuración de PuTTY, donde será necesario introducir los parámetros correspondientes para conectar con las máquinas del Datamart, una vez conectados a la red privada a través del cliente VPN.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/puttyconfig}
+   \caption{Pantalla de configuracion de PuTTY}
+   \label{fig:PuTTY_Config}
+\end{figure}
+
+\section{Toad para Oracle}
+\label{sec:Toad para Oracle}
+Toad para Oracle es una herramienta que permite asegurar la máxima productividad en el desarrollo y administración de bases de datos Oracle, permitiendo reducir el tiempo y esfuerzo necesarios para desarrollar, administrar y mantener bases de datos de Oracle.
+
+En la figura~\ref{fig:Toad_Config} se muestra una captura de pantalla de Toad for Oracle donde se lleva a cabo la configuración de los diferentes entornos (Desarrollo, Prepoducción y Producción).
+
+\begin{figure}
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/toadconfig}
+   \caption{Pantalla de configuración de Toad para Oracle}
+   \label{fig:Toad_Config}
+\end{figure}
+
+\section{FileZilla}
+\label{sec:FileZilla}
+FileZilla es una solución FTP de código abierto y software libre distribuido de manera gratuita bajo la Licencia Pública General GNU. Este software dispone tanto de cliente como de servidor, sin embargo, para el objeto de este Proyecto se usa únicamente el cliente FTP.
+
+El cliente FTP permite la transferencia entre dos máquinas, en el caso de este Proyecto se conecta el cliente FTP a las máquinas donde reside el Datamart con el objetivo de administrar el sistema de ficheros desde entorno Windows desde la interfaz gráfica que proporciona el Cliente FTP de FileZilla. Para su correcto funcionamiento, es necesario configurar los parámetros correspondientes a la IP de la máquina remota, así como el usuario y contraseña.
+
+En la figura~\ref{fig:FileZilla_Config} se presenta una captura de pantalla de la página de configuración del Cliente FTP de FileZilla.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=12cm, keepaspectratio]{img/filezillaconfig}
+   \caption{Pantalla de configuracion del cliente de Filezilla}
+   \label{fig:FileZilla_Config}
+\end{figure}
+
+\section{ODBC}
+\label{sec:ODBC}
+Por último, en la realización de este proyecto también es necesario disponer de ODBC configurado con el fin de llevar a cabo análisis de datos y actualización de informes ejecutados a través de Microsoft Excel.
+
+Open DataBase Connectivity (ODBC, por sus siglas) es un estándar de acceso a las bases de datos desarrollado por SQL Access Group. El objetivo de ODBC es hacer posible el acceso a cualquier dato desde cualquier aplicación, sin importar qué sistema de gestión de bases de datos almacene los datos.
+
+Para configurar ODBC iremos al Administrador de orígenes de datos y en la pestaña “DNS de sistema” agregaremos tantos orígenes de datos como entornos o esquemas tengamos.
+
+\section{Python}
+\label{sec:Python}
+Python es un lenguaje de programación de código abierto o “open-source” que cuenta con la licencia Python Software Foundation License, compatible con la Licencia pública general de GNU. La filosofía de Python hace hincapié en una sintaxis que favorece que el código sea legible, principal característica de este lenguaje de programación. Otras características que hacen de Python un lenguaje de programación muy versátil son las siguientes:
+
+\begin{itemize}
+	\item Es un lenguaje de programación multiparadigma. Esto quiere decir que, más que forzar a los encargados del desarrollo del software a adoptar un estilo particular de programación, permite varios estilos: programación orientada a objetos, programación imperativa y programación funcional.
+
+	\item Por otro lado, se trata de un lenguaje interpretado, es decir, no necesita compilación, con lo que la máquina es capaz de ejecutar la sucesión de instrucciones sin traducción previa. Esto hace que cualquier código sea independiente de las características concretas de la máquina o sistema operativo y, por tanto, es portable.
+
+	\item Por último, Python usa tipado dinámico: una misma variable puede tomar valores de distinto tipo en diferentes momentos de la ejecución del código.
+\end{itemize}
+
+\section{Shell Scripts}
+\label{sec:Shell_Scripts}
+Los Shell Scripts contienen una serie de comandos de la Shell de Unix que, en la mayor parte de los que se usan en este proyecto, llevan a cabo una serie de operaciones sobre los ficheros y recopilan los parámetros necesarios para la ejecución del SQL correspondiente. Por ello, juegan un papel fundamental en este proyecto, ya que todos los procesos que se ejecutan para llevar a cabo las tareas propias del Datamart de Riesgos se lanzan a través de scripts. Un Shell script es un programa diseñado para ser ejecutado por la Shell de Unix, el intérprete de línea de comandos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% DISE�O E IMPLEMENTACI�N %
+% DISEÑO E IMPLEMENTACIÓN %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Dise�o e implementaci�n}
+\chapter{Diseño e implementación}
 
-\section{Arquitectura general} 
-\label{sec:arquitectura}
+Este capítulo contiene la parte principal del proyecto, ya que describe el diseño y funcionamiento del Datamart, las tareas principales llevadas a cabo en el soporte y mantenimiento del mismo, así como errores más comunes en su funcionamiento y las metodologías para solventarlos.
 
-figura~\ref{fig:arquitectura}.
+\section{Diseño general} 
+\label{sec:diseno}
+El Datamart de riesgos se divide en dos partes: operacional y analítico. En la parte del operacional se lleva a cabo el tratamiento de información y generación de informes relativos a los datos diarios. Por otro lado, en el analítico se lleva a cabo la manipulación de la información relativa a los ciclos de facturación o mensual.
+
+El operacional del Datamart se procesa de manera diaria en un esquema propio de la base de datos. Hay que tener en cuenta que existe cierta información que se recibe y procesa varias veces al día, como es el caso de la información de consumos recibida desde Arbor. Las fuentes de entrada del sistema operacional son, en esencia, las siguientes:
+\begin{itemize}
+	\item Clarify: información relativa a la cartera de clientes. Desde Clarify se reciben una vez al día diferentes ficheros, entre ellos: clientes, cuentas, servicios, descuentos, límites, restricciones, promociones, … En la tabla de la figura~\ref{fig:entidades1} se muestran los ficheros que se reciben, así como la periodicidad, el volumen de registros y tamaño estimados:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades1}
+	  \caption{Entidades Clarify}
+	  \label{fig:entidades1}
+	\end{figure}
+	
+	\item Spirit: este sistema es, básicamente, el mismo que Clarify donde se está migrando toda la información. Por lo tanto, para tener toda la información de la cartera de clientes completa es necesario tratar datos que provienen de Spirit. Los ficheros recibidos son equivalentes a los de Clarify y también se reciben una vez al día. En la tabla de la figura~\ref{fig:entidades2} se muestran los detalles de los ficheros recibidos desde Spirit:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades2}
+	  \caption{Entidades Spirit}
+	  \label{fig:entidades2}
+	\end{figure}
+	
+	\item Arbor: desde el sistema Arbor se recibe la información de consumo de los clientes. Esta información se recibe y procesa cada dos horas. En la tabla de la figura~\ref{fig:entidades3} se muestran los detalles de los ficheros recibidos desde Arbor:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades3}
+	  \caption{Entidades Arbor}
+	  \label{fig:entidades3}
+	\end{figure}
+	
+	\item CRM: desde CRM se recibe la información de cualquier contacto que tienen los calls centers con los clientes. Se reciben los ficheros una vez al día. En la tabla de la figura~\ref{fig:entidades4} se muestran los detalles de los ficheros recibidos:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades4}
+	  \caption{Entidades CRM}
+	  \label{fig:entidades4}
+	\end{figure}
+
+	\item DWH: desde el Data Warehouse se reciben varios ficheros, todos ellos se reciben y procesan una vez al día.
+	\item HUR: desde este sistema se recibe el detalle concreto del consumo realizado por los clientes. En la tabla de la figura~\ref{fig:entidades5} se muestran los detalles de los ficheros recibidos:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades5}
+	  \caption{Entidades HUR Pandora}
+	  \label{fig:entidades5}
+	\end{figure}
+
+	\item Bancos (BNK): desde los bancos se recibe la información relativa a las devoluciones de los recibos. Se reciben ficheros de diferentes bancos una vez al día y se procesan con la misma frecuencia. En la tabla de la figura~\ref{fig:entidades6} se muestran los detalles de los ficheros recibidos:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades6}
+	  \caption{Entidades BNK}
+	  \label{fig:entidades6}
+	\end{figure}
+
+	\item SAP: de SAP se recibe la información relativa a las devoluciones procesadas por este mismo sistema, así como los movimientos contables y la deuda. En las tablas de las figuras~\ref{fig:entidades7_1} y~\ref{fig:entidades7_2} se muestran los detalles de los ficheros recibidos:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades7}
+	  \caption{Entidades SAP}
+	  \label{fig:entidades7}
+	\end{figure}
+
+	\item Informa: se trata de una plataforma que ofrece información acerca de empresas; para este Datamart desde Informa llega la información de las empresas en situación concursal de forma semanal. En la tabla de la figura~\ref{fig:entidades8} se muestran los detalles del fichero recibido:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades8}
+	  \caption{Entidades Informa}
+	  \label{fig:entidades8}
+	\end{figure}
+	
+	\item SEPA: desde SEPA se cargan las devoluciones procesadas por este sistema. En la tabla de la figura~\ref{fig:entidades9} se muestran los detalles del fichero recibido:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades9}
+	  \caption{Entidades SEPA}
+	  \label{fig:entidades9}
+	\end{figure}
+	
+	\item Provisión Masiva. En la tabla de la figura~\ref{fig:entidades10} se muestran los detalles del fichero recibido:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades10}
+	  \caption{Entidades Otras}
+	  \label{fig:entidades10}
+	\end{figure}
+	
+	\item Asignaciones.
+	
+	\item Agex. Las agencias externas envían su cartera para su inclusión en el Datamart. En la tabla de la figura~\ref{fig:entidades11} se muestran los detalles del fichero recibido:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades11}
+	  \caption{Entidades AGEX}
+	  \label{fig:entidades11}
+	\end{figure}
+	
+	\item Diccionarios. La información que se carga de Diccionarios es muy estática, es decir, no suele haber cambios de una ejecución a otra (se trata de tablas descriptivas). A pesar de ello, se reciben de manera diaria.
+\end{itemize}
+
+El sistema analítico del Datamart se procesa de manera ciclada, es decir, después de cada ciclo de facturación. La información del sistema analítico está en un esquema de la base de datos diferente al operacional. Las fuentes de entrada del sistema analítico son:
+\begin{itemize}
+	\item DWH: después de cada ciclo de facturación, desde el Datawarehouse se recibe en el Datamart de Riesgos la información de cartera, facturación, cambio de direcciones, promociones y llamadas pasarela.
+	\item BO: desde BO se recibe la información correspondiente a la cartera y a los cobros. En la tabla de la figura~\ref{fig:entidades12} se muestran los detalles de los ficheros recibidos:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades12}
+	  \caption{Entidades BO}
+	  \label{fig:entidades12}
+	\end{figure}
+	
+	\item Adquisiciones: desde Adquisiciones se recibe la información relativa a las solicitudes de alta, portabilidades, migraciones y cambios de titular, junto con una serie de indicadores. En la tabla de la figura~\ref{fig:entidades13} se muestran los detalles del fichero recibido:
+
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades13}
+	  \caption{Entidades Adquisiciones}
+	  \label{fig:entidades13}
+	\end{figure}
+\end{itemize}
+
+En la figura ~\ref{fig:mapa_sistemas} se muestra un mapa de todos los sistemas de los que se extrae información para su procesado y tratamiento en el Datamart de Riesgos. Así mismo, se muestran los informes que el Datamart produce como salida y que se detallarán más adelante en este Proyecto.
 
 \begin{figure}
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura}
-  \caption{Estructura del parser b�sico}
-  \label{fig:arquitectura}
+  \includegraphics[width=12cm, keepaspectratio]{img/mapa_sistemas}
+  \caption{Mapa de sistemas Datamart de riesgos}
+  \label{fig:mapa_sistemas}
 \end{figure}
 
+\section{Monitorización de la ejecución} 
+\label{sec:monitorizacion}
+Para la monitorización diaria de las ejecuciones se dispone de un script que muestra la salida desde la propia línea de comandos. Este script lo que hace es comprobar los logs que generan los diferentes procesos: si alguno de los procesos no finaliza correctamente, en el correspondiente log aparecerá el error y este script mostrará por pantalla una alerta; del mismo modo, si los procesos periódicos no se han ejecutado cuando correspondía (por ejemplo, porque no han llegado los ficheros necesarios) también mostrará una alerta. Este script también refleja cuando un proceso se encuentra en ejecución.
+Para ejecutar el script, nos conectaremos a la VPN mediante el Cliente VPN de Cisco, ejecutaremos PuTTy e iniciaremos sesión en la máquina UNIX. Para lanzar la ejecución del script, nos situaremos en la carpeta donde se encuentra mediante el comando “cd” seguido de la carpeta y posteriormente ejecutaremos el script con ``ksh COMPROBAR\_EJECUCIONES". En la figura ~\ref{fig:comprobar_ejecuciones} se muestra la salida por línea de comandos que proporciona este script.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=16cm, keepaspectratio]{img/comprobar_ejecuciones}
+  \caption{Salida por línea de comandos del script COMPROBAR\_EJECUCIONES}
+  \label{fig:comprobar_ejecuciones}
+\end{figure}
+
+Los procesos los podemos diferenciar en aquellos cuya ejecución está programada y aquellos cuya ejecución se lleva a cabo bajo demanda. En los siguientes apartados se detallan los diferentes procesos, así como las cuestiones a tener en cuenta para el soporte y mantenimiento de los mismos.
+
+\section{Ejecución programada de los procesos} 
+\label{sec:ejecucion_programada}
+Para controlar la ejecución programada hay que fijarse en la periodicidad de los diferentes procesos, ya que puede ser que se ejecuten una sola vez al día o varias. Para ello, existen dos ficheros de configuración en los cuales se lleva a cabo la planificación de los procesos: ./cfg/ctl\_lanzador.cfg y ./cfg/ctl\_planificador.cfg.
+
+El lanzador, ctl\_lanzador.cfg, contiene los scripts que componen los lanzadores de tareas que se tienen que ejecutar, mientras que, en el planificador, ctl\_planificador.cfg, se configura la periodicidad y horas en las que estas tareas se ejecutan. Por ejemplo, en el fichero del planificador nos podemos encontrar una línea como la siguiente:
+\begin{center}
+	\textit{04\textbar00\textbar10\textbar08\textbar00\textbar/home/kxenuser/bin/LANZADOR-LANZA\_CARTERA}
+\end{center}
+
+Esto nos indica que el proceso LANZA\_CARTERA se empieza a ejecutar mediante el lanzador a las 04:00AM, comprobando si llega información nueva a sus respectivas carpetas cada 10 minutos. Si han llegado los ficheros, se ejecuta LANZA\_CARTERA y se procesan la información, en caso contrario, se sigue esperando hasta las 08:00AM.
+
+En caso de que alguno de los procesos falle, se debe revisar el log de ejecución que se encuentra en ./log/FICHERO\_ERRORES\_LANZADOR. Aquí se puede identificar el fallo que se ha producido y, para analizar en detalle el error, se debe buscar el log del script concreto que falló en la ruta correspondiente.
+
+Una vez localizado y resuelto el error y antes de relanzar el proceso, hay que eliminar el error del log FICHERO\_ERRORES\_LANZADOR, ya que el lanzador no permite ejecutar procesos que presentan error en dicho log. Una vez se ha limpiado el log de errores, se lanza por línea de comandos el proceso correspondiente:
+
+\begin{center}
+	\textit{nohup ksh LANZADOR “LANZADOR QUE FALLÓ” &}
+\end{center}
+
+De cara a optimizar los recursos del Datamart, se deben comentar en el fichero ctl\_lanzador.cfg los scripts del proceso, dejando sin comentar únicamente el que falló y sus sucesores, volviendo a descomentarlos una vez haya finalizado para que no interfiera en sucesivas ejecuciones.
+
+Por último, es importante tener en cuenta que algunos procesos dependen de otros, con lo que se debe controlar cuidadosamente la ejecución de aquellos procesos predecesores para que realicen sus tareas en plazo y no retrasen la ejecución del proceso dependiente.
+
+\section{Ejecución bajo demanda de los procesos} 
+\label{sec:ejecucion_demanda}
+En el momento de realización de este proyecto se disponía de tres procesos que se ejecutaban bajo demanda. La monitorización de estos procesos también se lleva a cabo mediante el script COMPROBAR\_EJECUCIONES.
+
+Para los procesos que se ejecutan bajo demanda es necesario que el solicitante nos remita el fichero a procesar. Al ser un proceso más manual que en el caso de ejecuciones programadas, es altamente recomendable, antes de procesar el fichero en cuestión, comprobar que nos lo envían con la información bien formada y con los campos correctos. Para ello, con el siguiente comando podemos detectar de una manera rápida si los campos son los adecuados:
+\begin{center}
+	\textit{head TLF\_TDX\_????????.txt}
+\end{center}
+
+\section{Fallos comunes en la ejecución diaria y tratamiento} 
+\label{sec:fallos}
+
+\begin{enumerate}
+	\item Error en una tabla \par
+En el caso de producirse algún error que afecte a alguna de las tablas que usan varios procesos, habrá que desplanificar la ejecución de dichos procesos para evitar un bucle de errores que afecte a más tablas del Datamart. 
+
+Cuando tengamos que desplanificar algún proceso y luego queramos que se lance, lo volveremos a planificar con la hora actual (por ejemplo, si son las 14:00, en el planificador lo pondremos para que se lance a las 14:05). Habrá que tener especial cuidado al realizar esto, ya que el planificador a las 00:00 detiene todos los procesos y lee la planificación que haya configurada en ese momento. El problema radica en que, si tenemos algún proceso que tenga que estar ejecutándose continuamente, al replanificarlo a otra hora no se volverá a lanzar al día siguiente hasta esa hora. Para evitar esto, una vez se haya lanzado el proceso, en el planificador lo volvemos a cambiar para ponerlo a su hora original.
+
+Ejemplo de uso: hay un problema en la tabla SERVICIOS\_V. Desplanificamos todas las tareas que usan este relacional hasta que solventemos el problema. Una vez solucionado, las volvemos a poner en el planificador con la hora actual + 5 minutos, y una vez se hayan lanzado, las volvemos a cambiar con la planificación original.
+
+	\item Procesos con dependencias \par
+	Como se ha indicado anteriormente, existen procesos que presentan dependencias con otros procesos. Esto queda reflejado en el fichero de configuración ctl\_dependencias.cfg, que contiene configuración como la siguiente:
+	
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_DEUDA\_12;rel\_deuda.sh;0;36000}
+
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_CRM;rel\_interac\_estado\_actual.sh;0;36000}
+
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_CRM\_BO;rel\_interaccion\_cuenta\_cont.sh;0;36000}
+
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_MVTO\_DIA;rel\_mvto\_contable\_diario.sh;0;36000}
+
+En este ejemplo, vemos que LANZA\_EXCLUSIONES depende de las tareas LANZA\_DEUDA\_12, LANZA\_CRM, LANZA\_CRM\_BO y LANZA\_MVTO\_DIA. En concreto la dependencia consiste en que los scripts que ahí se indican se deben haber ejecutado correctamente en el día en el que se está intentando ejecutar LANZA\_EXCLUSIONES. Si fallase la ejecución de, por ejemplo, LANZA\_CRM\_BO, habría que seguir los siguientes pasos:
+	\begin{itemize}
+		\item Encontrar el fallo por el que la cadena CRM\_BO falló, solucionarlo y relanzar esta cadena.
+		\item \textit{ksh ultima\_ejecucion\_correcta.sh LANZA\_EXCLUSIONES inf\_informe\_exclusion.sh}. El script ultima\_ejecucion\_correcta.sh lo que hace es forzar a que se detecte como correcta la ejecución de los scripts.
+	\end{itemize}
+	
+	\item CRM \par
+CRM es uno de los procesos que se ejecutan diariamente de forma programada. Este proceso lo que hace es cargar en el Datamart las interacciones que han tenido los clientes con el servicio de atención al cliente, categorizando esas interacciones en CASOS, SUBCASOS e INTERACCIÓN. Es habitual que la ejecución de este proceso falle debido a que los ficheros necesarios no llegan uno o varios días seguidos. A modo ilustrativo, a continuación se detallan los pasos que habría que seguir para solventar esta situación.
+
+\begin{itemize}
+	\item En primer lugar, una vez reclamados y obtenidos los ficheros, se dejan en la ruta de recepción correspondiente. Para el movimiento de ficheros podemos utilizar la línea de comandos a través de PuTTY o bien podemos utilizar la interfaz gráfica de FileZilla.
+	\item A continuación, en el fichero de configuración del lanzador, ctl\_lanzador.cfg, se modificará la parte de LANZA\_CRM tal y como se muestra en la figura~\ref{fig:crm_fallos}, comentando todos los scripts pertenecientes a este proceso, excepto los scripts encargados de cargar los ficheros en tablas de \textit{staging}. En estas tablas se cargan los datos brutos de los ficheros.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=12cm, keepaspectratio]{img/crm_fallos}
+  \caption{Modificación fichero ctl\_lanzador.cfg para reprocesado de los ficheros del proceso CRM}
+  \label{fig:crm_fallos}
+\end{figure}
+
+	\item Posteriormente, mediante línea de comandos ejecutamos el proceso con la instrucción \textit{nohup ksh LANZADOR LANZA\_CRM &}.
+
+	\item Una vez completado el proceso de carga de datos, comprobamos a través de Oracle que la información se ha cargado correctamente en las diferentes tablas de \textit{staging} (STG\_CRM\_CASOS, STG\_CRM\_SUBCASOS, STG\_CRM\_INTERACCIONES).
+
+	\item Ahora habrá que borrar de los CASOS y los SUBCASOS la información un día posterior a la fecha del fichero no recibido, por ejemplo, si los ficheros del día 18 de mayo (con fecha del 17) no llegaron, habría que ejecutar lo siguiente en Oracle:
+	\begin{center}
+		\textit{delete from STG\_CRM\_SUBCASOS}
+		\textit{where FECHA\_CIERRE is null;}
+		\textit{ }
+		\textit{delete from STG\_CRM\_SUBCASOS}
+		\textit{where FECHA\_CREACION >= TO\_DATE(\'20140518\', \'yyyymmdd\');}
+		\textit{ }
+		\textit{delete from STG\_CRM\_CASOS}
+		\textit{where FECHA_CIERRE is null;}
+		\textit{ }
+		\textit{delete from STG\_CRM\_CASOS	}
+\end{center}
+
+	\item Con este último paso eliminamos los casos posteriores a la fecha del fichero, que no interesa actualizar y los casos que no tuvieron cierre el día de no recepción del fichero. Nos quedamos con los casos cerrados el día del fichero, se hayan creado ese día o no. Del \textit{staging} de interacciones no se elimina nada porque todo son altas nuevas, así que se hace un volcado completo de la información del fichero al relacional.
+	
+	\item Volvemos al fichero ctl\_lanzador.cfg y comentamos de manera inversa, es decir, comentamos los scripts que cargan en \textit{staging} y descomentamos el resto de scripts. Por último, desde línea de comandos ejecutamos el lanzador igual que la primera vez.
+\end{itemize}
+El proceso realizado aquí para corregir este error producido por la ausencia de ficheros es una tipología, pudiendo encontrarnos con otras, como por ejemplo que los ficheros de entrada del proceso contengan información malformada o con duplicados, etc. No existe una forma general de solucionar los problemas que se puedan presentar en el Datamart y, por ello, no se abordan en este proyecto, ya que dependerá de la manera en la que el proceso esté diseñado, en los sistemas de información de entrada (cada sistema ofrece la información de una manera, por ejemplo, unos sistemas pueden enviar información con la vista de un solo día, o con la información histórica) y también depende de las necesidades y consideraciones que el área de negocio tenga. 
+
+\section{Rendimiento y optimización del Datamart} 
+\label{sec:rendimiento}
+Uno de los aspectos importantes y, en ocasiones olvidado debido al trabajo operativo del día a día, es el de mantener un buen rendimiento en el Datamart, evitando sobrecargas que puedan provocar la caída del sistema.
+
+Para ello, resulta de vital importancia revisar y mantener una adecuada planificación de los procesos, evaluando la carga que suponen cada uno de ellos y programando su ejecución de manera que no se solapen varios procesos que sobrecarguen el Datamart.
+
+Del mismo modo, es importante mantener unos procesos eficientes. Este es un aspecto controvertido, ya que en las organizaciones se trabaja en equipos multidisciplinares y con gran número de personas, y no suele existir una única manera correcta de hacer las cosas. La manera de mantener unos procesos eficientes es revisarlos manualmente en busca de comandos innecesarios en los scripts o querys de SQL muy complejas e ineficientes.
+
+Para evaluar el coste de las instrucciones SQL, Oracle cuenta con una utilidad la cual, sin necesidad de ejecutar la query sobre el Datamart, nos evalúa el coste. Con esto nos podemos hacer una idea de la carga que supondrá para el Datamart y, o bien diseñar una query menos costosa para llevar a cabo la misma tarea o, si esto no fuese posible, tenerlo en cuenta a la hora de ejecutar el proceso en el que se encuentre el script que contenga la query en cuestión.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,8 +680,6 @@ figura~\ref{fig:arquitectura}.
 
 \cleardoublepage
 \chapter{Resultados}
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -370,23 +692,23 @@ figura~\ref{fig:arquitectura}.
 \label{chap:conclusiones}
 
 
-\section{Consecuci�n de objetivos}
+\section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta secci�n es la secci�n espejo de las dos primeras del cap�tulo de objetivos,
-donde se planteaba el objetivo general y se elaboraban los espec�ficos.
+Esta sección es la sección espejo de las dos primeras del capítulo de objetivos,
+donde se planteaba el objetivo general y se elaboraban los especÌficos.
 
-Es aqu� donde hay que debatir qu� se ha conseguido y qu� no. Cuando algo no
-se ha conseguido, se ha de justificar, en t�rminos de qu� problemas se han
-encontrado y qu� medidas se han tomado para mitigar esos problemas.
+Es aquÌ donde hay que debatir quÈ se ha conseguido y quÈ no. Cuando algo no
+se ha conseguido, se ha de justificar, en tÈrminos de quÈ problemas se han
+encontrado y quÈ medidas se han tomado para mitigar esos problemas.
 
 
-\section{Aplicaci�n de lo aprendido}
+\section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aqu� viene lo que has aprendido durante el Grado/M�ster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas m�s relacionadas y
-comentar en un p�rrafo los conocimientos y habilidades puestos en pr�ctica.
+Aquí viene lo que has aprendido durante el Grado/M·ster y que has aplicado
+en el TFG/TFM. Una buena idea es poner las asignaturas m·s relacionadas y
+comentar en un p·rrafo los conocimientos y habilidades puestos en pr·ctica.
 
 \begin{enumerate}
   \item a
@@ -397,7 +719,7 @@ comentar en un p�rrafo los conocimientos y habilidades puestos en pr�ctica.
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aqu� viene lo que has aprendido en el Trabajo Fin de Grado/M�ster.
+Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
 
 \begin{enumerate}
   \item a
@@ -408,24 +730,15 @@ Aqu� viene lo que has aprendido en el Trabajo Fin de Grado/M�ster.
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ning�n software se termina, as� que aqu� vienen ideas y funcionalidades
-que estar�a bien tener implementadas en el futuro.
+Ningún software se termina, así que aquí vienen ideas y funcionalidades
+que estaría bien tener implementadas en el futuro.
 
 Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
 
 
-\section{Valoraci�n personal}
-\label{sec:valoracion}
-
-Finalmente (y de manera opcional), hay gente que se anima a dar su punto de
-vista sobre el proyecto, lo que ha aprendido, lo que le gustar�a haber aprendido,
-las tecnolog�as utilizadas y dem�s.
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AP�NDICE(S) %
+% APÉNDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
@@ -445,11 +758,11 @@ las tecnolog�as utilizadas y dem�s.
 % para incluir las citas en la memoria
 \bibliographystyle{abbrv}
 \bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
-% las referencias bibliogr�ficas. Abre ese fichero y mira el formato que tiene,
+% las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
 % que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
 % formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
-% y ver�s que lo puedes hacer de manera sencilla.
-% M�s informaci�n: 
+% y verás que lo puedes hacer de manera sencilla.
+% Más informaciÛn: 
 % http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
 \end{document}
