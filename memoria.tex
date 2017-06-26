@@ -473,11 +473,18 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 
 	\begin{figure}
 	  \centering
-	  \includegraphics[width=14cm, keepaspectratio]{img/entidades7}
-	  \caption{Entidades SAP}
-	  \label{fig:entidades7}
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades7_1}
+	  \caption{Entidades SAP (1)}
+	  \label{fig:entidades7_1}
 	\end{figure}
 
+	\begin{figure}
+	  \centering
+	  \includegraphics[width=14cm, keepaspectratio]{img/entidades7_2}
+	  \caption{Entidades SAP (2)}
+	  \label{fig:entidades7_2}
+	\end{figure}
+	
 	\item Informa: se trata de una plataforma que ofrece información acerca de empresas; para este Datamart desde Informa llega la información de las empresas en situación concursal de forma semanal. En la tabla de la figura~\ref{fig:entidades8} se muestran los detalles del fichero recibido:
 
 	\begin{figure}
@@ -580,7 +587,7 @@ En caso de que alguno de los procesos falle, se debe revisar el log de ejecució
 Una vez localizado y resuelto el error y antes de relanzar el proceso, hay que eliminar el error del log FICHERO\_ERRORES\_LANZADOR, ya que el lanzador no permite ejecutar procesos que presentan error en dicho log. Una vez se ha limpiado el log de errores, se lanza por línea de comandos el proceso correspondiente:
 
 \begin{center}
-	\textit{nohup ksh LANZADOR “LANZADOR QUE FALLÓ” &}
+	\textit{nohup ksh LANZADOR ``LANZADOR QUE FALLÓ'' \&}
 \end{center}
 
 De cara a optimizar los recursos del Datamart, se deben comentar en el fichero ctl\_lanzador.cfg los scripts del proceso, dejando sin comentar únicamente el que falló y sus sucesores, volviendo a descomentarlos una vez haya finalizado para que no interfiera en sucesivas ejecuciones.
@@ -638,23 +645,26 @@ CRM es uno de los procesos que se ejecutan diariamente de forma programada. Este
   \label{fig:crm_fallos}
 \end{figure}
 
-	\item Posteriormente, mediante línea de comandos ejecutamos el proceso con la instrucción \textit{nohup ksh LANZADOR LANZA\_CRM &}.
+	\item Posteriormente, mediante línea de comandos ejecutamos el proceso con la instrucción \textit{nohup ksh LANZADOR LANZA\_CRM \&}.
 
 	\item Una vez completado el proceso de carga de datos, comprobamos a través de Oracle que la información se ha cargado correctamente en las diferentes tablas de \textit{staging} (STG\_CRM\_CASOS, STG\_CRM\_SUBCASOS, STG\_CRM\_INTERACCIONES).
 
 	\item Ahora habrá que borrar de los CASOS y los SUBCASOS la información un día posterior a la fecha del fichero no recibido, por ejemplo, si los ficheros del día 18 de mayo (con fecha del 17) no llegaron, habría que ejecutar lo siguiente en Oracle:
-	\begin{center}
+
 		\textit{delete from STG\_CRM\_SUBCASOS}
+		
 		\textit{where FECHA\_CIERRE is null;}
-		\textit{ }
+		
 		\textit{delete from STG\_CRM\_SUBCASOS}
-		\textit{where FECHA\_CREACION >= TO\_DATE(\'20140518\', \'yyyymmdd\');}
-		\textit{ }
+		
+		\textit{where FECHA\_CREACION > = TO\_DATE('20140518', 'yyyymmdd');}
+		
 		\textit{delete from STG\_CRM\_CASOS}
-		\textit{where FECHA_CIERRE is null;}
-		\textit{ }
-		\textit{delete from STG\_CRM\_CASOS	}
-\end{center}
+		
+		\textit{where FECHA\_CIERRE is null;}
+		
+		\textit{delete from STG\_CRM\_CASOS}
+
 
 	\item Con este último paso eliminamos los casos posteriores a la fecha del fichero, que no interesa actualizar y los casos que no tuvieron cierre el día de no recepción del fichero. Nos quedamos con los casos cerrados el día del fichero, se hayan creado ese día o no. Del \textit{staging} de interacciones no se elimina nada porque todo son altas nuevas, así que se hace un volcado completo de la información del fichero al relacional.
 	
@@ -706,9 +716,7 @@ encontrado y quÈ medidas se han tomado para mitigar esos problemas.
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aquí viene lo que has aprendido durante el Grado/M·ster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas m·s relacionadas y
-comentar en un p·rrafo los conocimientos y habilidades puestos en pr·ctica.
+Aquí viene lo que has aprendido durante el Grado/M·ster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
 
 \begin{enumerate}
   \item a
@@ -723,7 +731,7 @@ Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
 
 \begin{enumerate}
   \item a
-  \item b
+  \item ba
 \end{enumerate}
 
 
