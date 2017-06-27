@@ -156,8 +156,6 @@ mi familia y a mi esposa}
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 Siempre es difícil acordarse de todas y cada una de las personas que merecen ser nombradas. Para evitar dejarme ningún nombre en el tintero, no puedo más que dar las gracias a todas y cada una de las personas con las que, de una forma u otra, he compartido momentos durante el paso por la universidad.
 
-\vspace{5mm}
-
 Sin embargo, hay personas que merecen una mención especial: papá, mamá y Cristina, gracias por aguantarme, animarme y apoyarme durante estos años. Papá, gracias por orientarme y aconsejarme con tu experiencia, hoy sí te lo puedo decir: tenías razón siempre. Mamá, gracias por tu constancia y tu paciencia infinita.
 
 También se merece una mención especial Irene. Llevas a mi lado desde 2008 y me has acompañado en todos los momentos de mi vida desde entonces, tanto en lo académico como en lo personal. No puedo más que agradecerte tu apoyo incondicional y tu cariño.
@@ -165,8 +163,6 @@ También se merece una mención especial Irene. Llevas a mi lado desde 2008 y me
 Por supuesto, David gracias por estar ahí desde que empezamos esta doble licenciatura. Además de compañero, te considero amigo incondicional y hermano. Lo que la programación y las integrales han unido, nada lo puede separar.
 
 Y para terminar con el ámbito personal, agradecer especialmente al pequeño grupo de \textit{Telecolades} y al resto de compañeros entre los que formamos el reducido grupo en los últimos años.
-
-\vspace{5mm}
 
 En el apartado más académico, agradecer a la Universidad Rey Juan Carlos y a todo su equipo docente el tiempo, energía y esfuerzo dedicados. Soy consciente del esfuerzo que os ha supuesto a todos los docentes el compaginar nuestra antigua titulación con los actuales grados, ofreciendo tutorías de manera altruista multiplicando vuestra carga de trabajo. Por todo ello, os doy las gracias.
 
@@ -224,7 +220,6 @@ just before submitting.
 %\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
 %\listoftables % indice de tablas
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INTRODUCCIÓN %
@@ -238,11 +233,11 @@ just before submitting.
 \section{Contexto}
 \label{sec:Contexto}
 
-En la actualidad, el área de Inteligencia de Negocio o \textit{Business Intelligence} ha adquirido una gran relevancia para las empresas. Esto es así debido a la elevada capacidad tanto de almacenamiento como de procesamiento de datos, los cuales se desechaban por resultar demasiado costoso su almacenamiento y/o tratamiento. A través de un adecuado tratamiento de toda esa información, las organizaciones son capaces de tomar decisiones de negocio de la forma más acertada posible: descifrando tendencias, segmentando mercados y teniendo un mayor conocimiento de la actuación de la organización en un determinado mercado.
+En la actualidad, el área de Inteligencia de Negocio o \textit{Business Intelligence} (BI) ha adquirido una gran relevancia para las empresas. Esto es así debido a la elevada capacidad tanto de almacenamiento como de procesamiento de datos, los cuales se desechaban por resultar demasiado costoso su almacenamiento y/o tratamiento. A través de un adecuado tratamiento de toda esa información, las organizaciones son capaces de tomar decisiones de negocio de la forma más acertada posible: descifrando tendencias, segmentando mercados y teniendo un mayor conocimiento de la actuación de la organización en un determinado mercado.
 
 El principal objetivo de la inteligencia de negocio consiste en hacer de los datos información de valor y conocimiento, de manera que la toma de decisiones pueda sustentarse en el procesado de esos datos.
 
-Son varios los medios especializados y estudios\cite{BI_tendencies1,BI_tendencies2,BI_tendencies3,BI_tendencies4} que indican que aún queda mucho camino por recorrer en el mundo del \textit{Business Intelligence}. Por un lado, aumentará la demanda de herramientas que permitan acceder a gráficos más potentes y con capacidades creativas más avanzadas. Además, se tenderá a un modelo de BI de autoservicio, en el que las propias áreas de negocio accederás a la información y llevarán a cabo las transformaciones y procesado necesario.
+Son varios los medios especializados y estudios \cite{BI_tendencies1,BI_tendencies2,BI_tendencies3,BI_tendencies4} que indican que aún queda mucho camino por recorrer en el mundo del \textit{Business Intelligence}. Por un lado, aumentará la demanda de herramientas que permitan acceder a gráficos más potentes y con capacidades creativas más avanzadas. Además, se tenderá a un modelo de BI de autoservicio, en el que las propias áreas de negocio accederán a la información y llevarán a cabo las transformaciones y procesado necesario.
 
 Así pues, este proyecto se desarrolla en este contexto de especial incremento del interés por parte de las organizaciones en el \textit{Business Intelligence} como palanca para llevar a cabo su transformación digital.
 
@@ -321,13 +316,13 @@ Los entornos de Business Intelligence se pueden basar en diferentes arquitectura
    \label{fig:modelo_Datamart}
 \end{figure}
 
-El proceso que siguen los datos en este modelo es el siguiente: los datos se mueven desde las bases de datos de los sistemas operacionales hacia la zona de “\textit{staging}” del Data Warehouse, donde se preparan y modifican los datos para ser almacenados en el Data Warehouse. Finalmente, esos datos preparados se envían hacia los diferentes Data Marts que la organización haya definido.
+El proceso que siguen los datos en este modelo es el siguiente: los datos se mueven desde las bases de datos de los sistemas operacionales hacia la zona de \textit{staging} del Data Warehouse, donde se preparan y modifican los datos para ser almacenados en el Data Warehouse. Finalmente, esos datos preparados se envían hacia los diferentes Data Marts que la organización haya definido.
 
-La tecnología o proceso que se emplea para mover los datos en esta arquitectura se denomina ETL (por sus siglas en inglés ``Extract, Transform and Load"). Se emplea para transferir datos desde las aplicaciones operacionales a la zona de “\textit{staging}” del Data Warehouse, desde esta al Data Warehouse, y desde este último a cada uno de los Data Marts.
+La tecnología o proceso que se emplea para mover los datos en esta arquitectura se denomina ETL (por sus siglas en inglés ``Extract, Transform and Load"). Se emplea para transferir datos desde las aplicaciones operacionales a la zona de \textit{staging} del Data Warehouse, desde esta al Data Warehouse, y desde este último a cada uno de los Data Marts.
 
 Mediante el proceso de ETL los datos se extraen, se transforman los valores de los datos inconsistentes, se limpian los datos mal formados, se filtran los datos y se cargan en la base de datos objetivo. La programación temporal de los trabajos de ETL es crítica, así como la tolerancia a errores: en caso de fallo de uno de estos trabajos, el resto debería responder de manera apropiada.
 
-El área de “\textit{staging}” del Data Warehouse es donde se copian los datos de los sistemas de origen de manera temporal. Este paso es fundamental en muchas arquitecturas de Data Warehouse para coordinar los tiempos entre todos los sistemas. De manera resumida, todos los datos que se necesitan deben estar disponibles al mismo tiempo antes de ser integrados en el Data Warehouse y, debido a, entre otras casos, los diferentes ciclos del negocio, los ciclos de procesamiento de datos en los sistemas de origen y las limitaciones de recursos hardware y red, no es factible extraer todos los datos de todas las bases de datos operacionales exactamente al mismo tiempo. Por ejemplo, puede ser razonable extraer la información de ventas diaria, sin embargo, extracciones diarias pueden no ser adecuadas para la información financiera que requiere un proceso de reconciliación a mes cerrado. Por último, es importante tener en cuenta que no todas las organizaciones necesitan un área de “\textit{staging}” en su Data Warehouse, ya que para muchos negocios es factible usar ETL para copiar directamente la información de las bases de datos operacionales al Data Warehouse.
+El área de \textit{staging} del Data Warehouse es donde se copian los datos de los sistemas de origen de manera temporal. Este paso es fundamental en muchas arquitecturas de Data Warehouse para coordinar los tiempos entre todos los sistemas. De manera resumida, todos los datos que se necesitan deben estar disponibles al mismo tiempo antes de ser integrados en el Data Warehouse y, debido a, entre otras casos, los diferentes ciclos del negocio, los ciclos de procesamiento de datos en los sistemas de origen y las limitaciones de recursos hardware y red, no es factible extraer todos los datos de todas las bases de datos operacionales exactamente al mismo tiempo. Por ejemplo, puede ser razonable extraer la información de ventas diaria, sin embargo, extracciones diarias pueden no ser adecuadas para la información financiera que requiere un proceso de reconciliación a mes cerrado. Por último, es importante tener en cuenta que no todas las organizaciones necesitan un área de \textit{staging} en su Data Warehouse, ya que para muchos negocios es factible usar ETL para copiar directamente la información de las bases de datos operacionales al Data Warehouse.
 
 El objetivo del Data Warehouse en toda la arquitectura es integrar la información corporativa. En este sentido, será el Data Warehouse el que contenga la “única versión de la verdad” para la organización, que habrá sido cuidadosamente construida a partir de la información almacenada en diferentes bases de datos operacionales. La cantidad de información que se llega a almacenar en un Data Warehouse es masiva, debido a que los datos se almacenan en un nivel de detalle muy granular. Por ejemplo, cada venta que ha tenido lugar en una organización se almacena y relaciona, permitiendo llevar a cabo agregados, agrupaciones, filtrados y demás operaciones en una cantidad casi ilimitada de formas.
 
@@ -337,7 +332,7 @@ Debido al gran volumen de información que almacena un Data Warehouse, las perso
 
 Los trabajos de ETL extraen la información del Data Warehouse y pueblan el/los Data Marts de la organización para su uso por parte de los grupos que toman las decisiones dentro de las organizaciones. Los Data Marts pueden ser dimensionales (esquemas en estrella) o relacionales, en función de como se necesite consumir la información y de qué herramienta de “front-end” se emplee para presentar la información.
 
-Cada Data Mart puede contener diferentes combinaciones de tablas, columnas y filas del Data Warehouse de la organización. Por ejemplo, una unidad de negocio o grupo de usuarios que no necesita datos históricos puede requerir únicamente las transacciones del año en curso, o el área de recursos humanos puede necesitar ver todos los detalles de todos los empleados, mientras que información como el salario o dirección de casa puede no ser apropiada para un Data Mart orientado al área de ventas.\cite{dwh1,dwh2,dwh3,dwh4,dwh5,dwh6,dwh7,dwh8}
+Cada Data Mart puede contener diferentes combinaciones de tablas, columnas y filas del Data Warehouse de la organización. Por ejemplo, una unidad de negocio o grupo de usuarios que no necesita datos históricos puede requerir únicamente las transacciones del año en curso, o el área de recursos humanos puede necesitar ver todos los detalles de todos los empleados, mientras que información como el salario o dirección de casa puede no ser apropiada para un Data Mart orientado al área de ventas \cite{dwh1,dwh2,dwh3,dwh4,dwh5,dwh6,dwh7,dwh8}.
 
 \section{Cliente VPN de Cisco}
 \label{sec:Cisco_VPN}
@@ -357,15 +352,13 @@ A continuación, se muestra una captura de pantalla de la herramienta Cisco VPN 
 
 \section{Oracle}
 \label{sec:Oracle}
-Oracle Database es un sistema de gestión de base de datos de tipo objeto-relacional (ORDBMS, por el acrónimo en inglés de Object-Relational Data Base Management System), desarrollado por Oracle Corporation. Durante el desarrollo de este proyecto se usa la versión 11.2.0 de Oracle Database\cite{Ashdown_oracle}.
+Oracle Database es un sistema de gestión de base de datos de tipo objeto-relacional (ORDBMS, por el acrónimo en inglés de Object-Relational Data Base Management System), desarrollado por Oracle Corporation. Durante el desarrollo de este proyecto se usa la versión 11.2.0 de Oracle Database \cite{Ashdown_oracle}.
 
-Cabe señalar que el lenguaje usado para la gestión de la base de datos de Oracle es el Structured Query Language o SQL, así como la extensión procedimental PL/SQL para Oracle\cite{oracle02}:
-
+Cabe señalar que el lenguaje usado para la gestión de la base de datos de Oracle es el Structured Query Language o SQL, así como la extensión procedimental PL/SQL para Oracle \cite{oracle02}:
 \begin{itemize}
 	\item SQL (por sus siglas en inglés \textit{Structured Query Language}) es un lenguaje declarativo basado en conjuntos que proporciona una interfaz a una RDBMS, como por ejemplo a la base de datos de Oracle. De manera contraria a otros lenguajes procedimentales (como por ejemplo C) que describen como se deben hacer las cosas, SQL es no-procedimental y simplemente describe qué se debe hacer. Los usuarios/programadores especifican el resultado que quieren obtener, no cómo obtenerlo.
 	
 Todas las operaciones sobre los datos almacenados en una base de datos bajo Oracle se realizan mediante sentencias SQL, también conocidas como \textit{queries}. Por ejemlpo, se emplea SQL para crear tablas, así como para consultar y modificar la información contenida en esas tablas.
-
 	\item PL/SQL es una extensión procedimental para Oracle SQL. PL/SQL está integrado con las bases de datos de Oracle, permitiendo a los usuarios emplear todas las instrucciones SQL, funciones y tipos de datos de las bases de datos de Oracle. Así, es posible usar PL/SQL para controlar el flujo de un programa SQL, utilizar variables, y escribir procedimientos que manejen los errores.
 	
 El principal beneficio de PL/SQL es la capacidad de almacenar toda la lógica de la aplicación en la propia base de datos. Un procedimiento o una función es un objeto del esquema que está formado por una serie de instrucciones SQL y por construcciones PL/SQL, agrupadas y almacendas en la base de datos, ejecutándose como una unidad para resolver un problema específico o para realizar una serie de tareas relacionadas. El mayor beneficio de la programación del lado del servidor es que la funcionalidad incorporada al aplicativo se puede desplegar en cualquier lugar.
@@ -373,7 +366,7 @@ El principal beneficio de PL/SQL es la capacidad de almacenar toda la lógica de
 
 \section{PuTTY}
 \label{sec:PuTTY}
-PuTTY es una herramienta de software libre cuya misión es crear un terminal UNIX en entorno Windows. Esta herramienta la desarrolló originalmente Simon Tatham para plataformas Windows, aunque a día de hoy es soportado por voluntarios y se está trabajando en clientes para sistemas operativos Mac OS\cite{putty1,putty2,putty3}.
+PuTTY es una herramienta de software libre cuya misión es crear un terminal UNIX en entorno Windows. Esta herramienta la desarrolló originalmente Simon Tatham para plataformas Windows, aunque a día de hoy es soportado por voluntarios y se está trabajando en clientes para sistemas operativos Mac OS \cite{putty1,putty2,putty3}.
 
 En este Proyecto, PuTTY se usa para abrir en los ordenadores desde donde se realiza el soporte y mantenimiento del Datamart un terminal UNIX conectado a través de SSH a las máquinas que alojan físicamente este Datamart de Riesgos.
 
@@ -388,7 +381,7 @@ En la figura~\ref{fig:PuTTY_Config} se muestra la pantalla de configuración de 
 
 \section{Toad para Oracle}
 \label{sec:Toad para Oracle}
-Toad para Oracle es una herramienta que permite asegurar la máxima productividad en el desarrollo y administración de bases de datos Oracle, permitiendo reducir el tiempo y esfuerzo necesarios para desarrollar, administrar y mantener bases de datos de Oracle\cite{toad1}.
+Toad para Oracle es una herramienta que permite asegurar la máxima productividad en el desarrollo y administración de bases de datos Oracle, permitiendo reducir el tiempo y esfuerzo necesarios para desarrollar, administrar y mantener bases de datos de Oracle \cite{toad1}.
 
 En la figura~\ref{fig:Toad_Config} se muestra una captura de pantalla de Toad for Oracle donde se lleva a cabo la configuración de los diferentes entornos (Desarrollo, Preproducción y Producción).
 
@@ -401,9 +394,9 @@ En la figura~\ref{fig:Toad_Config} se muestra una captura de pantalla de Toad fo
 
 \section{FileZilla}
 \label{sec:FileZilla}
-FileZilla es una solución FTP de código abierto y software libre distribuido de manera gratuita bajo la Licencia Pública General GNU. Este software dispone tanto de cliente como de servidor, sin embargo, para el objeto de este Proyecto se usa únicamente el cliente FTP\cite{filezilla1}.
+FileZilla es una solución FTP de código abierto y software libre distribuido de manera gratuita bajo la Licencia Pública General GNU. Este software dispone tanto de cliente como de servidor, sin embargo, para el objeto de este Proyecto se usa únicamente el cliente FTP \cite{filezilla1}.
 
-El cliente FTP permite la transferencia entre dos máquinas, en el caso de este Proyecto se conecta el cliente FTP a las máquinas donde reside el Datamart con el objetivo de administrar el sistema de ficheros desde entorno Windows desde la interfaz gráfica que proporciona el Cliente FTP de FileZilla. Para su correcto funcionamiento, es necesario configurar los parámetros correspondientes a la IP de la máquina remota, así como el usuario y contraseña\cite{filezilla2}.
+El cliente FTP permite la transferencia entre dos máquinas, en el caso de este Proyecto se conecta el cliente FTP a las máquinas donde reside el Datamart con el objetivo de administrar el sistema de ficheros desde entorno Windows desde la interfaz gráfica que proporciona el Cliente FTP de FileZilla. Para su correcto funcionamiento, es necesario configurar los parámetros correspondientes a la IP de la máquina remota, así como el usuario y contraseña \cite{filezilla2}.
 
 En la figura~\ref{fig:FileZilla_Config} se presenta una captura de pantalla de la página de configuración del Cliente FTP de FileZilla.
 
@@ -416,15 +409,15 @@ En la figura~\ref{fig:FileZilla_Config} se presenta una captura de pantalla de l
 
 \section{ODBC}
 \label{sec:ODBC}
-Por último, en la realización de este proyecto también es necesario disponer de ODBC configurado con el fin de llevar a cabo análisis de datos y actualización de informes ejecutados a través de Microsoft Excel\cite{microsoft_odbc}.
+Por último, en la realización de este proyecto también es necesario disponer de ODBC configurado con el fin de llevar a cabo análisis de datos y actualización de informes ejecutados a través de Microsoft Excel \cite{microsoft_odbc}.
 
-Open DataBase Connectivity (ODBC, por sus siglas) es un estándar de acceso a las bases de datos desarrollado por SQL Access Group. El objetivo de ODBC es hacer posible el acceso a cualquier dato desde cualquier aplicación, sin importar qué sistema de gestión de bases de datos almacene los datos\cite{alexandruaccess} \cite{odbc}.
+Open DataBase Connectivity (ODBC, por sus siglas) es un estándar de acceso a las bases de datos desarrollado por SQL Access Group. El objetivo de ODBC es hacer posible el acceso a cualquier dato desde cualquier aplicación, sin importar qué sistema de gestión de bases de datos almacene los datos \cite{alexandruaccess,odbc}.
 
 Para configurar ODBC iremos al Administrador de orígenes de datos y en la pestaña “DNS de sistema” agregaremos tantos orígenes de datos como entornos o esquemas tengamos.
 
 \section{Python}
 \label{sec:Python}
-Python es un lenguaje de programación de código abierto o “open-source” que cuenta con la licencia Python Software Foundation License, compatible con la Licencia pública general de GNU. La filosofía de Python hace hincapié en una sintaxis que favorece que el código sea legible, principal característica de este lenguaje de programación. Otras características que hacen de Python un lenguaje de programación muy versátil son las siguientes\cite{python01}\cite{python02}\cite{python03}:
+Python es un lenguaje de programación de código abierto o “open-source” que cuenta con la licencia Python Software Foundation License, compatible con la Licencia pública general de GNU. La filosofía de Python hace hincapié en una sintaxis que favorece que el código sea legible, principal característica de este lenguaje de programación. Otras características que hacen de Python un lenguaje de programación muy versátil son las siguientes \cite{python01,python02,python03}:
 
 \begin{itemize}
 	\item Es un lenguaje de programación multiparadigma. Esto quiere decir que, más que forzar a los encargados del desarrollo del software a adoptar un estilo particular de programación, permite varios estilos: programación orientada a objetos, programación imperativa y programación funcional.
@@ -436,7 +429,7 @@ Python es un lenguaje de programación de código abierto o “open-source” qu
 
 \section{Shell Scripts}
 \label{sec:Shell_Scripts}
-Los Shell Scripts contienen una serie de comandos de la Shell de Unix que, en la mayor parte de los que se usan en este proyecto, llevan a cabo una serie de operaciones sobre los ficheros y recopilan los parámetros necesarios para la ejecución del SQL correspondiente. Por ello, juegan un papel fundamental en este proyecto, ya que todos los procesos que se ejecutan para llevar a cabo las tareas propias del Datamart de Riesgos se lanzan a través de scripts. Un Shell script es un programa diseñado para ser ejecutado por la Shell de Unix, el intérprete de línea de comandos\cite{kernighan1984unix}.
+Los Shell Scripts contienen una serie de comandos de la Shell de Unix que, en la mayor parte de los que se usan en este proyecto, llevan a cabo una serie de operaciones sobre los ficheros y recopilan los parámetros necesarios para la ejecución del SQL correspondiente. Por ello, juegan un papel fundamental en este proyecto, ya que todos los procesos que se ejecutan para llevar a cabo las tareas propias del Datamart de Riesgos se lanzan a través de scripts. Un Shell script es un programa diseñado para ser ejecutado por la Shell de Unix, el intérprete de línea de comandos \cite{kernighan1984unix}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -454,7 +447,7 @@ El Datamart de riesgos se divide en dos partes: operacional y analítico. En la 
 
 El operacional del Datamart se procesa de manera diaria en un esquema propio de la base de datos. Hay que tener en cuenta que existe cierta información que se recibe y procesa varias veces al día, como es el caso de la información de consumos recibida desde Arbor. Las fuentes de entrada del sistema operacional son, en esencia, las siguientes:
 \begin{itemize}
-	\item Clarify: información relativa a la cartera de clientes. Desde Clarify se reciben una vez al día diferentes ficheros, entre ellos: clientes, cuentas, servicios, descuentos, límites, restricciones, promociones, … En la tabla de la figura~\ref{fig:entidades1} se muestran los ficheros que se reciben, así como la periodicidad, el volumen de registros y tamaño estimados:
+	\item Clarify: información relativa a la cartera de clientes. Desde Clarify se reciben una vez al día diferentes ficheros, entre ellos: clientes, cuentas, servicios, descuentos, límites, restricciones, promociones, … En la tabla de la figura~\ref{fig:entidades1} se muestran los ficheros que se reciben, así como la periodicidad, el volumen de registros y tamaño estimados.
 
 	\begin{figure}
 	  \centering
@@ -463,7 +456,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades1}
 	\end{figure}
 	
-	\item Spirit: este sistema es, básicamente, el mismo que Clarify donde se está migrando toda la información. Por lo tanto, para tener toda la información de la cartera de clientes completa es necesario tratar datos que provienen de Spirit. Los ficheros recibidos son equivalentes a los de Clarify y también se reciben una vez al día. En la tabla de la figura~\ref{fig:entidades2} se muestran los detalles de los ficheros recibidos desde Spirit:
+	\item Spirit: este sistema es, básicamente, el mismo que Clarify donde se está migrando toda la información. Por lo tanto, para tener toda la información de la cartera de clientes completa es necesario tratar datos que provienen de Spirit. Los ficheros recibidos son equivalentes a los de Clarify y también se reciben una vez al día. En la tabla de la figura~\ref{fig:entidades2} se muestran los detalles de los ficheros recibidos desde Spirit.
 
 	\begin{figure}
 	  \centering
@@ -472,7 +465,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades2}
 	\end{figure}
 	
-	\item Arbor: desde el sistema Arbor se recibe la información de consumo de los clientes. Esta información se recibe y procesa cada dos horas. En la tabla de la figura~\ref{fig:entidades3} se muestran los detalles de los ficheros recibidos desde Arbor:
+	\item Arbor: desde el sistema Arbor se recibe la información de consumo de los clientes. Esta información se recibe y procesa cada dos horas. En la tabla de la figura~\ref{fig:entidades3} se muestran los detalles de los ficheros recibidos desde Arbor.
 
 	\begin{figure}
 	  \centering
@@ -481,7 +474,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades3}
 	\end{figure}
 	
-	\item CRM: desde CRM se recibe la información de cualquier contacto que tienen los calls centers con los clientes. Se reciben los ficheros una vez al día. En la tabla de la figura~\ref{fig:entidades4} se muestran los detalles de los ficheros recibidos:
+	\item CRM: desde CRM se recibe la información de cualquier contacto que tienen los calls centers con los clientes. Se reciben los ficheros una vez al día. En la tabla de la figura~\ref{fig:entidades4} se muestran los detalles de los ficheros recibidos.
 
 	\begin{figure}
 	  \centering
@@ -491,7 +484,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	\end{figure}
 
 	\item DWH: desde el Data Warehouse se reciben varios ficheros, todos ellos se reciben y procesan una vez al día.
-	\item HUR: desde este sistema se recibe el detalle concreto del consumo realizado por los clientes. En la tabla de la figura~\ref{fig:entidades5} se muestran los detalles de los ficheros recibidos:
+	\item HUR: desde este sistema se recibe el detalle concreto del consumo realizado por los clientes. En la tabla de la figura~\ref{fig:entidades5} se muestran los detalles de los ficheros recibidos.
 
 	\begin{figure}
 	  \centering
@@ -500,7 +493,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades5}
 	\end{figure}
 
-	\item Bancos (BNK): desde los bancos se recibe la información relativa a las devoluciones de los recibos. Se reciben ficheros de diferentes bancos una vez al día y se procesan con la misma frecuencia. En la tabla de la figura~\ref{fig:entidades6} se muestran los detalles de los ficheros recibidos:
+	\item Bancos (BNK): desde los bancos se recibe la información relativa a las devoluciones de los recibos. Se reciben ficheros de diferentes bancos una vez al día y se procesan con la misma frecuencia. En la tabla de la figura~\ref{fig:entidades6} se muestran los detalles de los ficheros recibidos.
 
 	\begin{figure}
 	  \centering
@@ -509,7 +502,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades6}
 	\end{figure}
 
-	\item SAP: de SAP se recibe la información relativa a las devoluciones procesadas por este mismo sistema, así como los movimientos contables y la deuda. En las tablas de las figuras~\ref{fig:entidades7_1} y~\ref{fig:entidades7_2} se muestran los detalles de los ficheros recibidos:
+	\item SAP: de SAP se recibe la información relativa a las devoluciones procesadas por este mismo sistema, así como los movimientos contables y la deuda. En las tablas de las figuras~\ref{fig:entidades7_1} y~\ref{fig:entidades7_2} se muestran los detalles de los ficheros recibidos.
 
 	\begin{figure}
 	  \centering
@@ -525,7 +518,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades7_2}
 	\end{figure}
 	
-	\item Informa: se trata de una plataforma que ofrece información acerca de empresas; para este Datamart desde Informa llega la información de las empresas en situación concursal de forma semanal. En la tabla de la figura~\ref{fig:entidades8} se muestran los detalles del fichero recibido:
+	\item Informa: se trata de una plataforma que ofrece información acerca de empresas; para este Datamart desde Informa llega la información de las empresas en situación concursal de forma semanal. En la tabla de la figura~\ref{fig:entidades8} se muestran los detalles del fichero recibido.
 
 	\begin{figure}
 	  \centering
@@ -534,7 +527,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades8}
 	\end{figure}
 	
-	\item SEPA: desde SEPA se cargan las devoluciones procesadas por este sistema. En la tabla de la figura~\ref{fig:entidades9} se muestran los detalles del fichero recibido:
+	\item SEPA: desde SEPA se cargan las devoluciones procesadas por este sistema. En la tabla de la figura~\ref{fig:entidades9} se muestran los detalles del fichero recibido.
 
 	\begin{figure}
 	  \centering
@@ -543,7 +536,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	  \label{fig:entidades9}
 	\end{figure}
 	
-	\item Provisión Masiva. En la tabla de la figura~\ref{fig:entidades10} se muestran los detalles del fichero recibido:
+	\item Provisión Masiva. En la tabla de la figura~\ref{fig:entidades10} se muestran los detalles del fichero recibido.
 
 	\begin{figure}
 	  \centering
@@ -554,7 +547,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 	
 	\item Asignaciones.
 	
-	\item Agex. Las agencias externas envían su cartera para su inclusión en el Datamart. En la tabla de la figura~\ref{fig:entidades11} se muestran los detalles del fichero recibido:
+	\item Agex. Las agencias externas envían su cartera para su inclusión en el Datamart. En la tabla de la figura~\ref{fig:entidades11} se muestran los detalles del fichero recibido.
 
 	\begin{figure}
 	  \centering
@@ -569,7 +562,7 @@ El operacional del Datamart se procesa de manera diaria en un esquema propio de 
 El sistema analítico del Datamart se procesa de manera ciclada, es decir, después de cada ciclo de facturación. La información del sistema analítico está en un esquema de la base de datos diferente al operacional. Las fuentes de entrada del sistema analítico son:
 \begin{itemize}
 	\item DWH: después de cada ciclo de facturación, desde el Datawarehouse se recibe en el Datamart de Riesgos la información de cartera, facturación, cambio de direcciones, promociones y llamadas pasarela.
-	\item BO: desde BO se recibe la información correspondiente a la cartera y a los cobros. En la tabla de la figura~\ref{fig:entidades12} se muestran los detalles de los ficheros recibidos:
+	\item BO: desde BO se recibe la información correspondiente a la cartera y a los cobros. En la tabla de la figura~\ref{fig:entidades12} se muestran los detalles de los ficheros recibidos.
 
 	\begin{figure}
 	  \centering
@@ -578,7 +571,7 @@ El sistema analítico del Datamart se procesa de manera ciclada, es decir, despu
 	  \label{fig:entidades12}
 	\end{figure}
 	
-	\item Adquisiciones: desde Adquisiciones se recibe la información relativa a las solicitudes de alta, portabilidades, migraciones y cambios de titular, junto con una serie de indicadores. En la tabla de la figura~\ref{fig:entidades13} se muestran los detalles del fichero recibido:
+	\item Adquisiciones: desde Adquisiciones se recibe la información relativa a las solicitudes de alta, portabilidades, migraciones y cambios de titular, junto con una serie de indicadores. En la tabla de la figura~\ref{fig:entidades13} se muestran los detalles del fichero recibido.
 
 	\begin{figure}
 	  \centering
@@ -592,7 +585,7 @@ En la figura ~\ref{fig:mapa_sistemas} se muestra un mapa de todos los sistemas d
 
 \begin{figure}
   \centering
-  \includegraphics[width=12cm, keepaspectratio]{img/mapa_sistemas}
+  \includegraphics[width=15cm, keepaspectratio]{img/mapa_sistemas}
   \caption{Mapa de sistemas Datamart de riesgos}
   \label{fig:mapa_sistemas}
 \end{figure}
@@ -600,11 +593,11 @@ En la figura ~\ref{fig:mapa_sistemas} se muestra un mapa de todos los sistemas d
 \section{Monitorización de la ejecución} 
 \label{sec:monitorizacion}
 Para la monitorización diaria de las ejecuciones se dispone de un script que muestra la salida desde la propia línea de comandos. Este script lo que hace es comprobar los logs que generan los diferentes procesos: si alguno de los procesos no finaliza correctamente, en el correspondiente log aparecerá el error y este script mostrará por pantalla una alerta; del mismo modo, si los procesos periódicos no se han ejecutado cuando correspondía (por ejemplo, porque no han llegado los ficheros necesarios) también mostrará una alerta. Este script también refleja cuando un proceso se encuentra en ejecución.
-Para ejecutar el script, nos conectaremos a la VPN mediante el Cliente VPN de Cisco, ejecutaremos PuTTy e iniciaremos sesión en la máquina UNIX. Para lanzar la ejecución del script, nos situaremos en la carpeta donde se encuentra mediante el comando “cd” seguido de la carpeta y posteriormente ejecutaremos el script con ``ksh COMPROBAR\_EJECUCIONES". En la figura ~\ref{fig:comprobar_ejecuciones} se muestra la salida por línea de comandos que proporciona este script.
+Para ejecutar el script, nos conectaremos a la VPN mediante el Cliente VPN de Cisco, ejecutaremos PuTTy e iniciaremos sesión en la máquina UNIX. Para lanzar la ejecución del script, nos situaremos en la carpeta donde se encuentra mediante el comando \textit{cd} seguido de la carpeta y posteriormente ejecutaremos el script con \textit{ksh COMPROBAR\_EJECUCIONES}. En la figura ~\ref{fig:comprobar_ejecuciones} se muestra la salida por línea de comandos que proporciona este script.
 
 \begin{figure}
   \centering
-  \includegraphics[width=16cm, keepaspectratio]{img/comprobar_ejecuciones}
+  \includegraphics[width=15cm, keepaspectratio]{img/comprobar_ejecuciones}
   \caption{Salida por línea de comandos del script COMPROBAR\_EJECUCIONES}
   \label{fig:comprobar_ejecuciones}
 \end{figure}
