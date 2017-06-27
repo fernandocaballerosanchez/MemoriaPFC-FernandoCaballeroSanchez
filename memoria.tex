@@ -251,22 +251,22 @@ La motivación por realizar este proyecto surge con la oportunidad de llevar a c
 El objetivo de este apartado es facilitar la lectura y uso del presente documento, para lo cual se presenta a continuación la estructura del mismo, detallando qué contenido se podrá encontrar en cada capítulo:
 
 \begin{enumerate}
-	\item Introducción.\par
+	\item \textbf{Introducción.}\par
 	Se introduce el contexto en el que se ha llevado a cabo a cabo el proyecto, explicando la situación actual, además de su justificación. Así mismo, se explica la motivación que surge para la realización del proyecto. Por último, en este capítulo se encuentra este resumen de la estructura. 
 	
-	\item Objetivos.\par
+	\item \textbf{Objetivos.}\par
 	En este segundo capítulo se recogen tanto los objetivos generales del proyecto, como los objetivos específicos que, en un principio, se pretenden abordar.
 	
-	\item Estado del arte.\par
+	\item \textbf{Estado del arte.}\par
 	Se presentan tanto las tecnologías empleadas para llevar a cabo el proyecto, como el estado actual de las mismas. De manera adicional, se explica la contribución de cada una de las tecnologías en el proyecto y una pequeña introducción para su configuración.
 		
-	\item Diseño e implementación.\par
+	\item \textbf{Diseño e implementación.}\par
 	En este capítulo se detalla el uso que se hace de las tecnologías explicadas en el capítulo anterior. Se analiza en detalle la arquitectura y diseño del Datamart, así como las principales tareas necesarias y consideraciones más relevantes para mantener y dar soporte a un Datamart.
 	
-	\item Resultados.\par
+	\item \textbf{Resultados.}\par
 	Se hace mención a los resultados obtenidos fruto del trabajo llevado a cabo durante el Proyecto.
 	
-	\item Conclusiones.\par
+	\item \textbf{Conclusiones.}\par
 	En este último capítulo se lleva a cabo una reflexión a alto nivel sobre el recorrido del proyecto. En primer lugar, se analiza el nivel de consecución de los objetivos planteados. Por otro lado, se expondrán los conocimientos adquiridos durante la formación en la Doble Licenciatura en Ingeniería de Telecomunicación y Administración y Dirección de Empresas en la Universidad Rey Juan Carlos y aplicados durante la realización del presente Proyecto Final de Carrera. Así mismo, se indicarán los conocimientos y habilidades adquiridas durante la realización del Proyecto. Por último, se mencionan una serie de recomendaciones acerca de los próximos pasos que se podrían abordar en el Proyecto.
 	
 \end{enumerate}
@@ -283,11 +283,19 @@ El objetivo de este apartado es facilitar la lectura y uso del presente document
 
 \section{Objetivo general}
 \label{sec:objetivo-general}
-
+El objetivo principal de este proyecto es el de obtener los conocimientos acerca del funcionamiento de un Datamart, así como las tareas necesarias para dar soporte a su operativa y el mantenimiento del mismo.
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
+Para dar respuesta al objetivo principal, se pueden enumerar otra serie de objetivos específicos que han de ser cubiertos a lo largo del proyecto:
 
+\begin{itemize}
+	\item Conocer la arquitectura y la relación entre los diferentes sistemas de información involucrados.
+	
+	\item Optimizar la ejecución de los procesos del Datamart de riesgos
+	
+	\item Asistir a los procesos del Datamart para evitar bloqueos entre procesos dependientes
+\end{itemize}
 
 %\section{Planificación temporal}
 %\label{sec:planificacion-temporal}
@@ -308,11 +316,11 @@ El principal motivo por el que una organización necesita disponer de un Data Wa
 
 Por otro lado, las bases de datos operacionales están diseñadas para operar en los sistemas y recibir los datos de los mismos, por lo que no son adecuadas para llevar a cabo consultas y analíticas on-line.
 
-Los entornos de Business Intelligence se pueden basar en diferentes arquitecturas, dependiendo en las necesidades específicas del negocio. El modelo que se muestra en la siguiente figura es el “hub-and-spokes”, siendo el más popular y el que se usa en muchas organizaciones.
+Los entornos de Business Intelligence se pueden basar en diferentes arquitecturas, dependiendo en las necesidades específicas del negocio. El modelo que se muestra en la siguiente figura es el \textit{hub-and-spokes}, siendo el más popular y el que se usa en muchas organizaciones.
 
 \begin{figure}
    \centering
-   \includegraphics[width=12cm, keepaspectratio]{img/modelo_Datamart}
+   \includegraphics[width=14cm, keepaspectratio]{img/modelo_Datamart}
    \caption{Modelo Datamart hub-and-spokes}
    \label{fig:modelo_Datamart}
 \end{figure}
@@ -651,13 +659,25 @@ Ejemplo de uso: hay un problema en la tabla SERVICIOS\_V. Desplanificamos todas 
 	\item Procesos con dependencias \par
 	Como se ha indicado anteriormente, existen procesos que presentan dependencias con otros procesos. Esto queda reflejado en el fichero de configuración ctl\_dependencias.cfg, que contiene configuración como la siguiente:
 	
-\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_DEUDA\_12;rel\_deuda.sh;0;36000}
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_DEUDA\_12;}
 
-\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_CRM;rel\_interac\_estado\_actual.sh;0;36000}
+\begin{flushright}\textit{rel\_deuda.sh;0;36000}
+\end{flushright}
 
-\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_CRM\_BO;rel\_interaccion\_cuenta\_cont.sh;0;36000}
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_CRM;}
 
-\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_MVTO\_DIA;rel\_mvto\_contable\_diario.sh;0;36000}
+\begin{flushright}\textit{rel\_interac\_estado\_actual.sh;0;36000}
+\end{flushright}
+
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_CRM\_BO;}
+
+\begin{flushright}\textit{rel\_interaccion\_cuenta\_cont.sh;0;36000}
+\end{flushright}
+
+\textit{LANZA\_EXCLUSIONES;pre\_exclusiones\_laborable.sh;LANZA\_MVTO\_DIA;}
+
+\begin{flushright}\textit{rel\_mvto\_contable\_diario.sh;0;36000}
+\end{flushright}
 
 En este ejemplo, vemos que LANZA\_EXCLUSIONES depende de las tareas LANZA\_DEUDA\_12, LANZA\_CRM, LANZA\_CRM\_BO y LANZA\_MVTO\_DIA. En concreto la dependencia consiste en que los scripts que ahí se indican se deben haber ejecutado correctamente en el día en el que se está intentando ejecutar LANZA\_EXCLUSIONES. Si fallase la ejecución de, por ejemplo, LANZA\_CRM\_BO, habría que seguir los siguientes pasos:
 	\begin{itemize}
@@ -674,7 +694,7 @@ CRM es uno de los procesos que se ejecutan diariamente de forma programada. Este
 
 \begin{figure}
   \centering
-  \includegraphics[width=12cm, keepaspectratio]{img/crm_fallos}
+  \includegraphics[width=14cm, keepaspectratio]{img/crm_fallos}
   \caption{Modificación fichero ctl\_lanzador.cfg para reprocesado de los ficheros del proceso CRM}
   \label{fig:crm_fallos}
 \end{figure}
@@ -707,6 +727,11 @@ CRM es uno de los procesos que se ejecutan diariamente de forma programada. Este
 El proceso realizado aquí para corregir este error producido por la ausencia de ficheros es una tipología, pudiendo encontrarnos con otras, como por ejemplo que los ficheros de entrada del proceso contengan información malformada o con duplicados, etc. No existe una forma general de solucionar los problemas que se puedan presentar en el Datamart y, por ello, no se abordan en este proyecto, ya que dependerá de la manera en la que el proceso esté diseñado, en los sistemas de información de entrada (cada sistema ofrece la información de una manera, por ejemplo, unos sistemas pueden enviar información con la vista de un solo día, o con la información histórica) y también depende de las necesidades y consideraciones que el área de negocio tenga. 
 \end{enumerate}
 
+\section{Ejemplo de proceso: LANZA\_EXCLUSIONES} 
+\label{sec:lanza_exclusiones}
+En proceso.
+
+
 \section{Rendimiento y optimización del Datamart} 
 \label{sec:rendimiento}
 Uno de los aspectos importantes y, en ocasiones olvidado debido al trabajo operativo del día a día, es el de mantener un buen rendimiento en el Datamart, evitando sobrecargas que puedan provocar la caída del sistema.
@@ -724,8 +749,8 @@ Además de mantener una adecuada planificación, de cara a optimizar el uso del 
 % RESULTADOS %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage
-\chapter{Resultados}
+%\cleardoublepage
+%\chapter{Resultados}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -737,13 +762,10 @@ Además de mantener una adecuada planificación, de cara a optimizar el uso del 
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
-
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
-
-Es aquí donde hay que debatir qué se ha conseguido y qué no. Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+El objetivo principal de este proyecto es el de conocer el funcionamiento de un Datamart, las tareas necesarias para dar soporte a su operativa y el mantenimiento del mismo, habiendo sido ampliamente cubierto.
 
 
 \section{Aplicación de lo aprendido}
@@ -775,10 +797,9 @@ En cuanto a habilidades y conocimientos generales, el haber colaborado en un pro
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ningún software se termina, así que aquí vienen ideas y funcionalidades
-que estaría bien tener implementadas en el futuro.
+Como modelo ideal hacia el que debería orientarse el Datamart de riesgos, se propone migrar todas las funcionalidades implementadas a través de procesos que se ejecutan mediante \textit{scripts} hacia un entorno de BI que permita optimizar las tareas a la hora de analizar información. Para ello, se podría migrar hacia un entorno implementado en R, el cual es un entorno y lenguaje de programación enfocado hacia el análisis estadístico de los datos.
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+Por otro lado, aunque se trata de una tarea continuación de lo que ya se venía haciendo, debido a la continua evolución de las necesidades de negocio, resulta imprescindible continuar con la optimización de los actuales procesos.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
