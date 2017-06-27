@@ -287,7 +287,7 @@ El proceso que siguen los datos en este modelo es el siguiente: los datos se mue
 
 La tecnología o proceso que se emplea para mover los datos en esta arquitectura se denomina ETL (por sus siglas en inglés ``Extract, Transform and Load"). Se emplea para transferir datos desde las aplicaciones operacionales a la zona de “\textit{staging}” del Data Warehouse, desde esta al Data Warehouse, y desde este último a cada uno de los Data Marts.
 
-Mediante el proceso de ETL los datos se extraen, se transforman los valores de los datos inconsistentes, se limpian los datos malformados, se filtran los datos y se cargan en la base de datos objetivo. La programación temporal de los trabajos de ETL es crítica, así como la tolerancia a errores: en caso de fallo de uno de estos trabajos, el resto debería responder de manera apropiada.
+Mediante el proceso de ETL los datos se extraen, se transforman los valores de los datos inconsistentes, se limpian los datos mal formados, se filtran los datos y se cargan en la base de datos objetivo. La programación temporal de los trabajos de ETL es crítica, así como la tolerancia a errores: en caso de fallo de uno de estos trabajos, el resto debería responder de manera apropiada.
 
 El área de “\textit{staging}” del Data Warehouse es donde se copian los datos de los sistemas de origen de manera temporal. Este paso es fundamental en muchas arquitecturas de Data Warehouse para coordinar los tiempos entre todos los sistemas. De manera resumida, todos los datos que se necesitan deben estar disponibles al mismo tiempo antes de ser integrados en el Data Warehouse y, debido a, entre otras casos, los diferentes ciclos del negocio, los ciclos de procesamiento de datos en los sistemas de origen y las limitaciones de recursos hardware y red, no es factible extraer todos los datos de todas las bases de datos operacionales exactamente al mismo tiempo. Por ejemplo, puede ser razonable extraer la información de ventas diaria, sin embargo, extracciones diarias pueden no ser adecuadas para la información financiera que requiere un proceso de reconciliación a mes cerrado. Por último, es importante tener en cuenta que no todas las organizaciones necesitan un área de “\textit{staging}” en su Data Warehouse, ya que para muchos negocios es factible usar ETL para copiar directamente la información de las bases de datos operacionales al Data Warehouse.
 
@@ -342,7 +342,7 @@ En la figura~\ref{fig:PuTTY_Config} se muestra la pantalla de configuración de 
 \begin{figure}
    \centering
    \includegraphics[width=12cm, keepaspectratio]{img/puttyconfig}
-   \caption{Pantalla de configuracion de PuTTY}
+   \caption{Pantalla de configuración de PuTTY}
    \label{fig:PuTTY_Config}
 \end{figure}
 
@@ -350,7 +350,7 @@ En la figura~\ref{fig:PuTTY_Config} se muestra la pantalla de configuración de 
 \label{sec:Toad para Oracle}
 Toad para Oracle es una herramienta que permite asegurar la máxima productividad en el desarrollo y administración de bases de datos Oracle, permitiendo reducir el tiempo y esfuerzo necesarios para desarrollar, administrar y mantener bases de datos de Oracle.
 
-En la figura~\ref{fig:Toad_Config} se muestra una captura de pantalla de Toad for Oracle donde se lleva a cabo la configuración de los diferentes entornos (Desarrollo, Prepoducción y Producción).
+En la figura~\ref{fig:Toad_Config} se muestra una captura de pantalla de Toad for Oracle donde se lleva a cabo la configuración de los diferentes entornos (Desarrollo, Preproducción y Producción).
 
 \begin{figure}
    \centering
@@ -370,7 +370,7 @@ En la figura~\ref{fig:FileZilla_Config} se presenta una captura de pantalla de l
 \begin{figure}
    \centering
    \includegraphics[width=12cm, keepaspectratio]{img/filezillaconfig}
-   \caption{Pantalla de configuracion del cliente de Filezilla}
+   \caption{Pantalla de configuración del cliente de FileZilla}
    \label{fig:FileZilla_Config}
 \end{figure}
 
@@ -678,7 +678,7 @@ Uno de los aspectos importantes y, en ocasiones olvidado debido al trabajo opera
 
 Para ello, resulta de vital importancia revisar y mantener una adecuada planificación de los procesos, evaluando la carga que suponen cada uno de ellos y programando su ejecución de manera que no se solapen varios procesos que sobrecarguen el Datamart.
 
-Del mismo modo, es importante mantener unos procesos eficientes. Este es un aspecto controvertido, ya que en las organizaciones se trabaja en equipos multidisciplinares y con gran número de personas, y no suele existir una única manera correcta de hacer las cosas. La manera de mantener unos procesos eficientes es revisarlos manualmente en busca de comandos innecesarios en los scripts o querys de SQL muy complejas e ineficientes.
+Del mismo modo, es importante mantener unos procesos eficientes. Este es un aspecto controvertido, ya que en las organizaciones se trabaja en equipos multidisciplinares y con gran número de personas, y no suele existir una única manera correcta de hacer las cosas. La manera de mantener unos procesos eficientes es revisarlos manualmente en busca de comandos innecesarios en los scripts o queries de SQL muy complejas e ineficientes.
 
 Para evaluar el coste de las instrucciones SQL, Oracle cuenta con una utilidad la cual, sin necesidad de ejecutar la query sobre el Datamart, nos evalúa el coste. Con esto nos podemos hacer una idea de la carga que supondrá para el Datamart y, o bien diseñar una query menos costosa para llevar a cabo la misma tarea o, si esto no fuese posible, tenerlo en cuenta a la hora de ejecutar el proceso en el que se encuentre el script que contenga la query en cuestión.
 \end{enumerate}
