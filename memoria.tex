@@ -705,6 +705,7 @@ CRM es uno de los procesos que se ejecutan diariamente de forma programada. Este
 	\item Volvemos al fichero ctl\_lanzador.cfg y comentamos de manera inversa, es decir, comentamos los scripts que cargan en \textit{staging} y descomentamos el resto de scripts. Por último, desde línea de comandos ejecutamos el lanzador igual que la primera vez.
 \end{itemize}
 El proceso realizado aquí para corregir este error producido por la ausencia de ficheros es una tipología, pudiendo encontrarnos con otras, como por ejemplo que los ficheros de entrada del proceso contengan información malformada o con duplicados, etc. No existe una forma general de solucionar los problemas que se puedan presentar en el Datamart y, por ello, no se abordan en este proyecto, ya que dependerá de la manera en la que el proceso esté diseñado, en los sistemas de información de entrada (cada sistema ofrece la información de una manera, por ejemplo, unos sistemas pueden enviar información con la vista de un solo día, o con la información histórica) y también depende de las necesidades y consideraciones que el área de negocio tenga. 
+\end{enumerate}
 
 \section{Rendimiento y optimización del Datamart} 
 \label{sec:rendimiento}
@@ -715,7 +716,8 @@ Para ello, resulta de vital importancia revisar y mantener una adecuada planific
 Del mismo modo, es importante mantener unos procesos eficientes. Este es un aspecto controvertido, ya que en las organizaciones se trabaja en equipos multidisciplinares y con gran número de personas, y no suele existir una única manera correcta de hacer las cosas. La manera de mantener unos procesos eficientes es revisarlos manualmente en busca de comandos innecesarios en los scripts o queries de SQL muy complejas e ineficientes.
 
 Para evaluar el coste de las instrucciones SQL, Oracle cuenta con una utilidad la cual, sin necesidad de ejecutar la query sobre el Datamart, nos evalúa el coste. Con esto nos podemos hacer una idea de la carga que supondrá para el Datamart y, o bien diseñar una query menos costosa para llevar a cabo la misma tarea o, si esto no fuese posible, tenerlo en cuenta a la hora de ejecutar el proceso en el que se encuentre el script que contenga la query en cuestión.
-\end{enumerate}
+
+Además de mantener una adecuada planificación, de cara a optimizar el uso del Datamart y evitar bloqueos del mismo, es de vital importancia prestar atención al espacio de almacenamiento, tanto de las máquinas que soportan el Datamart como de la propia estructura y del espacio libre de cada uno de los esquemas de la base de datos. En este Datamart, conseguimos liberar grandes cantidades de espacio en disco de la máquina UNIX trasladando a otra máquina todos aquellos archivos ya procesados y logs de una antigüedad superior a dos años. Por otro lado, se llevó a cabo una profunda revisión de las tablas de cada uno de los esquemas de la base de datos. Como resultado de esta revisión, se borraron aquellas tablas que habían dejado de usarse por diferentes motivos (principalmente, porque se crean y mejoran procesos y se dejan de usar otros, dejando de usar las tablas asignadas a estos). Además, se realizó una racionalización en el uso de tablas auxiliares y de pruebas, ya que en algunos casos se llegaban a hacer copias íntegras de las tablas que más información almacenaban solamente para llevar a cabo alguna prueba.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -759,18 +761,16 @@ La Licenciatura en Ingeniería de Telecomunicación me ha ofrecido una formació
 	\item \textbf{Proyectos.} Por último, esta asignatura ofrece los conocimientos básicos que cualquier profesional debe tener. Toda la terminología relacionada con la gestión de proyectos, las habilidades necesarias para hacer presentaciones en público, capacidad de toma de decisión en entornos dinámicos y los riesgos asociados a esa toma de decisión son conceptos clave para entender el funcionamiento de cualquier organización.
 \end{enumerate}
 
-Además de los conocimientos adquiridos en las asignaturas cursadas, durante la doble titulación he adquirido habilidades y aptitudes que también me han ayudado a desenvolverme en un entorno profesional. Entre otras, la capacidad de defender mis propuestas e ideas, capacidad de análisis y sentido crítico, orientación a resultados, ...
+Además de los conocimientos adquiridos en las asignaturas cursadas, durante la doble titulación he adquirido habilidades y aptitudes que también me han ayudado a desenvolverme en un entorno profesional. Entre otras, capacidad de defender mis propias ideas y propuestas, capacidad de análisis y sentido crítico, orientación a resultados, ...
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+En el ámbito más técnico, la realización de este proyecto me ha permitido adquirir un conocimiento más profundo de las capacidades de los \textit{Shell scripts}, dado que la gestión de las máquinas que soportan el propio Datamart se lleva a cabo casi al completo a través de ellos. Por otro lado, durante el proyecto he aprendido a manejar con soltura bases de datos, analizando la información del Datamart mediante \textit{queries} y optimizando la ejecución de los procesos encargados de dar tratamiento a la información del Datamart y de la generación de informes.
 
-\begin{enumerate}
-  \item a
-  \item ba
-\end{enumerate}
+El haber colaborado en un proyecto de \textit{Business Intelligence} me ha dotado de la visión de la importancia de la buena gestión de los datos para las compañías, además de ser consciente del enorme volumen de información que manejan las organizaciones con las que nos relacionamos las personas en nuestro día a día.
 
+En cuanto a habilidades y conocimientos generales, el haber colaborado en un proyecto real con un cliente al otro lado me ha permitido obtener una visión y orientación a resultados y a satisfacción de cliente que me ha permitido crecer profesionalmente. Esto mismo me ha permitido mejorar mis habilidades en cuanto a comunicación con otros equipos de trabajo, así como el escalado de problemas o situaciones complicadas a los superiores.
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
