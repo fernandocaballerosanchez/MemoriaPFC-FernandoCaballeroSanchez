@@ -183,7 +183,7 @@ En este contexto se desarrolla este proyecto, en el cual se analiza el concepto 
 
 Las principales tecnologías involucradas durante el proyecto han sido las bases de datos de Oracle y la programación de \textit{scripts} en PL/SQL, lenguaje propio de las bases de datos. Así mismo, el manejo de entornos UNIX a través de línea de comandos, así como la programación y manejo de \textit{Shell scripts}.
 
-Este proyecto se ha realizado en colaboración con el área de \textit{Business Intelligence} de everis. Durante la colaboración, se delegaron en mí las tareas de mantenimiento y soporte de un Datarmart de riesgos, el cual se encontraba en entorno productivo dando servicio a cliente, haciéndome responsable del buen funcionamiento y la correcta ejecución de los procesos.
+Este proyecto se ha realizado en colaboración con el área de \textit{Business Intelligence} de everis. Durante la colaboración, se delegaron en mí las tareas de mantenimiento y soporte de un Datarmart de riesgos, el cual se encontraba en entorno productivo dando servicio a cliente, haciéndome responsable del buen funcionamiento y la correcta ejecución de los procesos. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -246,6 +246,11 @@ Así pues, este proyecto se desarrolla en este contexto de especial incremento d
 \label{sec:motivacion}
 La motivación por realizar este proyecto surge con la oportunidad de llevar a cabo una colaboración con una consultora en el ámbito del \textit{Business Intelligence}. Tras analizar las posibilidades que ofrecen las empresas de consultoría en cuanto a un aprendizaje rápido y con una clara orientación a objetivos y a la satisfacción de las necesidades del cliente, considero que es una gran oportunidad para dar los primeros pasos de la carrera profesional. A esto se le une la pasión por la tecnología y los ordenadores que siempre he tenido, cultivada a través de todos estos años en la universidad, y el gran \textit{boom} que en este momento presenta el análisis de datos masivos.
 
+\section{Dedicación}
+\label{sec:dedicacion}
+Como se indica en el apartado anterior, este proyecto se ha realizado en colaboración con el área de \textit{Business Intelligence} de everis. Esta colaboración tuvo una duración de siete meses con una dedicación de jornada completa, durante la cual recibí formación del equipo de trabajo del proyecto del Datamart de riesgos para abordar las tareas que me fueron asignadas de manera adecuada. 
+
+
 \section{Estructura de esta memoria}
 \label{sec:estructura}
 El objetivo de este apartado es facilitar la lectura y uso del presente documento, para lo cual se presenta a continuación la estructura del mismo, detallando qué contenido se podrá encontrar en cada capítulo:
@@ -287,14 +292,20 @@ El objetivo principal de este proyecto es el de obtener los conocimientos acerca
 
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
-Para dar respuesta al objetivo principal, se pueden enumerar otra serie de objetivos específicos que han de ser cubiertos a lo largo del proyecto:
+Para dar respuesta al objetivo principal, se pueden enumerar otra serie de objetivos específicos que han de ser cubiertos a lo largo del proyecto y entre los que se encuentran las tareas que fueron de mi responsabilidad durante la colaboración:
 
 \begin{itemize}
 	\item Conocer la arquitectura y la relación entre los diferentes sistemas de información involucrados.
 	
-	\item Optimizar la ejecución de los procesos del Datamart de riesgos
+	\item Monitorizar la ejecución de los procesos del Datamart de riesgos con el objetivo de garantizar que no se producen bloqueos en el Datamart.
 	
-	\item Asistir a los procesos del Datamart para evitar bloqueos entre procesos dependientes
+	\item Optimizar la ejecución de los procesos del Datamart de riesgos.
+	
+	\item Asegurar el correcto funcionamiento de la máquina que soporta el Datamart de riesgos.
+	
+	\item Ejecutar procesos bajo demanda, asegurando la recepción de los datos necesarios así como el adecuado formato de los mismos.
+	
+	\item Realizar análisis de datos e informes y automatizarlos en la medida de lo posible.
 \end{itemize}
 
 %\section{Planificación temporal}
@@ -679,7 +690,7 @@ Ejemplo de uso: hay un problema en la tabla SERVICIOS\_V. Desplanificamos todas 
 \begin{flushright}\textit{rel\_mvto\_contable\_diario.sh;0;36000}
 \end{flushright}
 
-En este ejemplo, vemos que LANZA\_EXCLUSIONES depende de las tareas LANZA\_DEUDA\_12, LANZA\_CRM, LANZA\_CRM\_BO y LANZA\_MVTO\_DIA. En concreto la dependencia consiste en que los scripts que ahí se indican se deben haber ejecutado correctamente en el día en el que se está intentando ejecutar LANZA\_EXCLUSIONES. Si fallase la ejecución de, por ejemplo, LANZA\_CRM\_BO, habría que seguir los siguientes pasos:
+En este ejemplo, vemos que LANZA\_EXCLUSIONES depende de las tareas LANZA\_ DEUDA\_12, LANZA\_CRM, LANZA\_CRM\_BO y LANZA\_MVTO\_DIA. En concreto la dependencia consiste en que los scripts que ahí se indican se deben haber ejecutado correctamente en el día en el que se está intentando ejecutar LANZA\_EXCLUSIONES. Si fallase la ejecución de, por ejemplo, LANZA\_CRM\_BO, habría que seguir los siguientes pasos:
 	\begin{itemize}
 		\item Encontrar el fallo por el que la cadena CRM\_BO falló, solucionarlo y relanzar esta cadena.
 		\item \textit{ksh ultima\_ejecucion\_correcta.sh LANZA\_EXCLUSIONES inf\_informe\_exclusion.sh}. El script ultima\_ejecucion\_correcta.sh lo que hace es forzar a que se detecte como correcta la ejecución de los scripts.
@@ -729,7 +740,21 @@ El proceso realizado aquí para corregir este error producido por la ausencia de
 
 \section{Ejemplo de proceso: LANZA\_EXCLUSIONES} 
 \label{sec:lanza_exclusiones}
-En proceso.
+En este apartado se va a explicar el funcionamiento de uno de los procesos del Datamart de riesgos, para lo que se ha seleccionado el proceso de LANZA\_EXCLUSIONES.
+
+El proceso de exclusiones se emplea para no tener en cuenta a aquellos clientes con deuda pendiente de abonar y que no se deben tener en cuenta para solicitar su recobro. Entre los motivos para excluir a un cliente están los siguientes:
+
+\begin{itemize}
+	\item Reclamación oficial: marcado en la legislación vigente, no se debe solicitar al cliente ningún cobro de deuda. Este es el tipo de reclamación más importante a tener en cuenta y por la que el proceso completo resulta vital, ya que si la organización se pusiese en contacto con un cliente para reclamar una deuda pendiente de cobro, dicho cliente podría iniciar acciones judiciales contra la organización.
+	
+	\item Reclamación no oficial: se puede decidir proteger a un cliente por otros motivos más allá de los legales (por ejemplo, que se esté haciendo un recálculo de la cuota a pagar por el cliente).
+\end{itemize}
+
+Para dar soporte y mantener adecuadamante este proceso, lo más importante es tener en cuenta los ficheros de entrada de los que depende el proceso, así como el resto de procesos de los que depende. Por otro lado, es importante tener en cuenta los plazos definidos para recibir los ficheros de entrada y el \textit{deadline} marcado para haber ejecutado el proceso y enviar el informe correspondiente.
+
+En concreto, este proceso tiene una fuerte dependencia del proceso LANZA\_CRM, el cual se encarga de cargar y procesar en el Datamart la información relativa a las interacciones realizadas por los clientes con los \textit{Call Center}. Por ello, una de las tareas más importantes es la de asegurar la ejecución y finalización del proceso LANZA\_CRM antes del comienzo de LANZA\_EXCLUSIONES. En caso de error en LANZA\_CRM habrá que solucionarlo manualmente cuanto antes si fuese por un error en el procesado, ya que si el error se debe a que no han llegado los ficheros necesarios para LANZA\_CRM, lo único que podremos hacer es reclamarlos e informar del retraso en los informes de LANZA\_EXCLUSIONES.
+
+Otra de las tareas llevadas a cabo en relación a este proceso consistía en la exclusión de clientes bajo demanda. Para ello, mediante Oracle y a través de \textit{queries} SQL, se modificaban las tablas en las que se volcaban los resultados del proceso LANZA\_EXCLUSIONES para incluir a los nuevos clientes excluidos bajo demanda y, posteriormente, se ejecutaba únicamente la parte del proceso en la que se generaban los informes a partir de estas tablas.
 
 
 \section{Rendimiento y optimización del Datamart} 
@@ -742,7 +767,11 @@ Del mismo modo, es importante mantener unos procesos eficientes. Este es un aspe
 
 Para evaluar el coste de las instrucciones SQL, Oracle cuenta con una utilidad la cual, sin necesidad de ejecutar la query sobre el Datamart, nos evalúa el coste. Con esto nos podemos hacer una idea de la carga que supondrá para el Datamart y, o bien diseñar una query menos costosa para llevar a cabo la misma tarea o, si esto no fuese posible, tenerlo en cuenta a la hora de ejecutar el proceso en el que se encuentre el script que contenga la query en cuestión.
 
-Además de mantener una adecuada planificación, de cara a optimizar el uso del Datamart y evitar bloqueos del mismo, es de vital importancia prestar atención al espacio de almacenamiento, tanto de las máquinas que soportan el Datamart como de la propia estructura y del espacio libre de cada uno de los esquemas de la base de datos. En este Datamart, conseguimos liberar grandes cantidades de espacio en disco de la máquina UNIX trasladando a otra máquina todos aquellos archivos ya procesados y logs de una antigüedad superior a dos años. Por otro lado, se llevó a cabo una profunda revisión de las tablas de cada uno de los esquemas de la base de datos. Como resultado de esta revisión, se borraron aquellas tablas que habían dejado de usarse por diferentes motivos (principalmente, porque se crean y mejoran procesos y se dejan de usar otros, dejando de usar las tablas asignadas a estos). Además, se realizó una racionalización en el uso de tablas auxiliares y de pruebas, ya que en algunos casos se llegaban a hacer copias íntegras de las tablas que más información almacenaban solamente para llevar a cabo alguna prueba.
+Además de mantener una adecuada planificación, de cara a optimizar el uso del Datamart y evitar bloqueos del mismo, es de vital importancia prestar atención al espacio de almacenamiento, tanto de las máquinas que soportan el Datamart como de la propia estructura y del espacio libre de cada uno de los esquemas de la base de datos.
+
+En este Datamart conseguimos liberar grandes cantidades de espacio en disco de la máquina UNIX trasladando a otra máquina todos aquellos archivos ya procesados y logs de una antigüedad superior a dos años. Por otro lado, se llevó a cabo una profunda revisión de las tablas de cada uno de los esquemas de la base de datos. Como resultado de esta revisión, se borraron aquellas tablas que habían dejado de usarse por diferentes motivos (principalmente, porque se crean y mejoran procesos y se dejan de usar otros, dejando de usar las tablas asignadas a estos).
+
+Además, se llevó a cabo la racionalización en el uso de tablas auxiliares y de pruebas, ya que en algunos casos se llegaban a hacer copias íntegras de las tablas que más información almacenaban solamente para llevar a cabo alguna prueba. Para hacernos una idea, estamos hablando de tablas que en el entorno productivo podían rondar en 10\% de la capacidad de almacenamiento dedicado a la base de datos, con lo que si se habían hecho dos copias completas por dos de los analistas del equipo, se podía llegar a ocupar una parte importante del espacio.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -751,7 +780,7 @@ Además de mantener una adecuada planificación, de cara a optimizar el uso del 
 
 %\cleardoublepage
 %\chapter{Resultados}
-
+%Los resultados de este proyecto, al tratarse de una colaboración en un proyecto en curso, son los %obtenidos de la consecución y ejecución de las tareas de soporte y mantenimiento del Datamart de %riesgos. Estos objetivos y tareas son los descritos en el capítulo~\ref{chap:objetivos} y la %consecución de los mismos se describe en el capítulo~\ref{chap:conclusiones}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -766,6 +795,8 @@ Además de mantener una adecuada planificación, de cara a optimizar el uso del 
 \label{sec:consecucion-objetivos}
 
 El objetivo principal de este proyecto es el de conocer el funcionamiento de un Datamart, las tareas necesarias para dar soporte a su operativa y el mantenimiento del mismo, habiendo sido ampliamente cubierto.
+
+En cuanto a los objetivos secundarios descritos en el capítulo~\ref{chap:objetivos}, todos ellos fueron cubiertos al 100\%, debido a que dichos objetivos formaban parte de las tareas de las cuales yo era el responsable.
 
 
 \section{Aplicación de lo aprendido}
@@ -788,7 +819,7 @@ Además de los conocimientos adquiridos en las asignaturas cursadas, durante la 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-En el ámbito más técnico, la realización de este proyecto me ha permitido adquirir un conocimiento más profundo de las capacidades de los \textit{Shell scripts}, dado que la gestión de las máquinas que soportan el propio Datamart se lleva a cabo casi al completo a través de ellos. Por otro lado, durante el proyecto he aprendido a manejar con soltura bases de datos, analizando la información del Datamart mediante \textit{queries} y optimizando la ejecución de los procesos encargados de dar tratamiento a la información del Datamart y de la generación de informes.
+En el ámbito más técnico, la realización de este proyecto me ha permitido adquirir un conocimiento más profundo de las capacidades de los \textit{Shell scripts}, dado que la gestión de las máquinas que soportan el propio Datamart se lleva a cabo casi al completo a través de ellos. Por otro lado, durante el proyecto he aprendido a manejar con soltura bases de datos, analizando la información del Datamart mediante \textit{queries} SQL y optimizando la ejecución de los procesos encargados de dar tratamiento a la información del Datamart y de la generación de informes.
 
 El haber colaborado en un proyecto de \textit{Business Intelligence} me ha dotado de la visión de la importancia de la buena gestión de los datos para las compañías, además de ser consciente del enorme volumen de información que manejan las organizaciones con las que nos relacionamos las personas en nuestro día a día.
 
